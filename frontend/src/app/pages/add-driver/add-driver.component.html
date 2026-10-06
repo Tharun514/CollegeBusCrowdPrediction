@@ -1,0 +1,132 @@
+<div class="container mt-4">
+
+    <div class="card">
+
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+
+            <h3 class="m-0">Add Driver</h3>
+            <button class="btn btn-secondary btn-sm" routerLink="/drivers">
+                <i class="bi bi-arrow-left"></i> Back to Drivers
+            </button>
+
+        </div>
+
+        <div class="card-body">
+
+            <form [formGroup]="driverForm">
+
+                <!-- Driver Name -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        Driver Name
+
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        formControlName="name">
+
+                </div>
+
+                <!-- Phone -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        Phone Number
+
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        formControlName="phone">
+
+                </div>
+
+                <!-- License -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        License Number
+
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        formControlName="license">
+
+                </div>
+
+                <!-- Status -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        Status
+
+                    </label>
+
+                    <select
+                        class="form-select"
+                        formControlName="status">
+
+                        <option value="">Select Status</option>
+
+                        <option value="AVAILABLE">
+
+                            AVAILABLE
+
+                        </option>
+
+                        <option value="ON_ROUTE">
+
+                            ON_ROUTE
+
+                        </option>
+
+                        <option value="OFFLINE">
+
+                            OFFLINE
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- Buttons -->
+
+                <button
+                    type="button"
+                    class="btn btn-success"
+                    (click)="saveDriver()">
+
+                    Save Driver
+
+                </button>
+
+                <button
+                    type="reset"
+                    class="btn btn-secondary ms-2">
+
+                    Reset
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

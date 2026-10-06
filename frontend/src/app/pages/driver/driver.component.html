@@ -1,0 +1,88 @@
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="m-0 d-flex align-items-center"><i class="bi bi-person-badge-fill"></i> Drivers Management</h2>
+        <button class="btn btn-success" routerLink="/add-driver">
+            <i class="bi bi-plus-circle"></i> Add Driver
+        </button>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-5">
+            <div class="input-group">
+                <span class="input-group-text bg-white border-end-0">
+                    <i class="bi bi-search text-muted"></i>
+                </span>
+                <input type="text" class="form-control border-start-0 ps-0"
+                    placeholder="Search by Name, Phone, License or Status" [(ngModel)]="searchText"
+                    (keyup)="filterDrivers()">
+            </div>
+        </div>
+        <div class="col-md-7 text-end">
+            <span class="badge bg-primary fs-6">
+                Total Drivers : {{drivers.length}}
+            </span>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped">
+
+        <thead class="table-dark">
+
+            <tr>
+
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>License</th>
+                <th>Status</th>
+                <th width="180">Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let driver of drivers">
+
+                <td>{{driver.driverId}}</td>
+
+                <td>{{driver.name}}</td>
+
+                <td>{{driver.phone}}</td>
+
+                <td>{{driver.license}}</td>
+
+                <td>
+                    <span class="badge" [ngClass]="driver.status === 'Active' ? 'bg-success' : 'bg-danger'">
+                        {{driver.status}}
+                    </span>
+                </td>
+
+                <td class="action-column">
+
+                    <div class="action-buttons">
+
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/edit-driver', driver.driverId]">
+
+                            Edit
+
+                        </button>
+
+                        <button class="btn btn-danger btn-sm" (click)="deleteDriver(driver.driverId!)">
+
+                            Delete
+
+                        </button>
+
+                    </div>
+
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>

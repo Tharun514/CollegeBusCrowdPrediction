@@ -1,0 +1,82 @@
+<div class="settings-page">
+
+    <!-- Page Header -->
+
+    <div class="settings-header">
+
+        <h1>Settings</h1>
+
+        <p>Manage your account preferences.</p>
+
+    </div>
+
+    <!-- Main Layout -->
+
+    <div class="settings-layout">
+
+        <!-- Left Navigation -->
+
+        <div class="settings-sidebar">
+
+            <h3>
+
+                Settings
+
+            </h3>
+
+            <button routerLink="/student-settings" routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }">
+
+                <i class="bi bi-house-door-fill"></i>
+
+                Overview
+
+            </button>
+
+            <button routerLink="/student-profile" routerLinkActive="active">
+
+                <i class="bi bi-person-fill"></i>
+
+                My Profile
+
+            </button>
+
+            <button routerLink="/student-change-password" routerLinkActive="active">
+
+                <i class="bi bi-key-fill"></i>
+
+                Change Password
+
+            </button>
+
+            <button routerLink="/student-theme" routerLinkActive="active">
+
+                <i class="bi bi-palette-fill"></i>
+
+                Theme
+
+            </button>
+
+        </div>
+
+        <!-- Right Content -->
+
+        <div class="settings-content">
+
+            <!-- College Banner -->
+
+            <div class="college-banner">
+
+                <img src="assets/images/college.jpg" alt="College Campus">
+
+                <div class="banner-overlay">
+
+                    <h2>College Bus Crowd Prediction System</h2>
+
+                    <p>Welcome to Student Settings</p>
+
+                </div>
+
+            </div>
+
+        </div>

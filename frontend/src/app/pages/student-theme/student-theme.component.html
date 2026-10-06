@@ -1,0 +1,163 @@
+<div class="theme-page">
+
+    <!-- Header -->
+
+    <div class="page-title">
+
+        <div>
+
+            <h2>Theme Settings</h2>
+
+            <p>Customize the appearance of your student portal.</p>
+
+        </div>
+
+        <button class="save-btn" (click)="saveTheme()">
+
+            <i class="bi bi-check-circle-fill"></i>
+
+            Save Changes
+
+        </button>
+
+    </div>
+
+    <!-- Theme Selection -->
+
+    <div class="theme-grid">
+
+        <!-- ==========================
+             LIGHT THEME
+        =========================== -->
+
+        <div class="theme-card" [class.active]="selectedTheme === 'light'">
+
+            <div class="theme-preview light-preview">
+
+                <div class="preview-navbar"></div>
+
+                <div class="preview-sidebar"></div>
+
+                <div class="preview-content"></div>
+
+            </div>
+
+            <h4>
+
+                <i class="bi bi-sun-fill"></i>
+
+                Light Theme
+
+            </h4>
+
+            <p>
+
+                Bright interface with clean colors for everyday use.
+
+            </p>
+
+            <button *ngIf="selectedTheme === 'light'" class="select-btn">
+
+                Selected
+
+            </button>
+
+            <button *ngIf="selectedTheme !== 'light'" class="outline-btn" (click)="selectTheme('light')">
+
+                Select
+
+            </button>
+
+        </div>
+
+        <!-- ==========================
+             DARK THEME
+        =========================== -->
+
+        <div class="theme-card" [class.active]="selectedTheme === 'dark'">
+
+            <div class="theme-preview dark-preview">
+
+                <div class="preview-navbar"></div>
+
+                <div class="preview-sidebar"></div>
+
+                <div class="preview-content"></div>
+
+            </div>
+
+            <h4>
+
+                <i class="bi bi-moon-stars-fill"></i>
+
+                Dark Theme
+
+            </h4>
+
+            <p>
+
+                Comfortable viewing experience in low-light environments.
+
+            </p>
+
+            <button *ngIf="selectedTheme === 'dark'" class="select-btn">
+
+                Selected
+
+            </button>
+
+            <button *ngIf="selectedTheme !== 'dark'" class="outline-btn" (click)="selectTheme('dark')">
+
+                Select
+
+            </button>
+
+        </div>
+
+        <!-- ==========================
+             SYSTEM THEME
+        =========================== -->
+
+        <div class="theme-card" [class.active]="selectedTheme === 'system'">
+
+            <div class="theme-preview system-preview">
+
+                <div class="preview-navbar"></div>
+
+                <div class="preview-sidebar"></div>
+
+                <div class="preview-content"></div>
+
+            </div>
+
+            <h4>
+
+                <i class="bi bi-laptop"></i>
+
+                System Default
+
+            </h4>
+
+            <p>
+
+                Automatically follows your operating system appearance.
+
+            </p>
+
+            <button *ngIf="selectedTheme === 'system'" class="select-btn">
+
+                Selected
+
+            </button>
+
+            <button *ngIf="selectedTheme !== 'system'" class="outline-btn" (click)="selectTheme('system')">
+
+                Select
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

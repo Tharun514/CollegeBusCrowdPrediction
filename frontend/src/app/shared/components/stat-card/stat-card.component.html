@@ -1,0 +1,39 @@
+<div class="stat-card">
+
+    <div class="card-top">
+
+        <div>
+
+            <div class="card-title">
+
+                {{title}}
+
+            </div>
+
+            <div class="card-value" *ngIf="!loading">
+
+                {{value}}
+
+            </div>
+
+            <div class="card-loading" *ngIf="loading">
+
+            </div>
+
+            <div class="card-subtitle" *ngIf="subtitle">
+
+                {{subtitle}}
+
+            </div>
+
+        </div>
+
+        <div class="card-icon" [ngClass]="color">
+
+            <i [class]="icon"></i>
+
+        </div>
+
+    </div>
+
+</div>

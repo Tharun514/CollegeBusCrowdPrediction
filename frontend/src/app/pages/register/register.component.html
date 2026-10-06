@@ -1,0 +1,413 @@
+<div class="register-page">
+
+  <div class="register-card">
+
+    <div class="text-center mb-4">
+
+      <h2 class="fw-bold">College Bus Crowd Prediction System</h2>
+
+      <p class="text-muted">
+        Create your account to access the transport portal
+      </p>
+
+    </div>
+
+    <!-- Role -->
+
+    <div class="mb-4">
+
+      <label class="form-label fw-semibold">
+        Register As
+      </label>
+
+      <select class="form-select" [(ngModel)]="role">
+
+        <option value="STUDENT">
+          Student
+        </option>
+
+        <option value="ADMIN">
+          Admin
+        </option>
+
+      </select>
+
+    </div>
+
+    <!-- ====================== STUDENT ===================== -->
+
+    <div *ngIf="role=='STUDENT'">
+
+      <!-- Personal -->
+
+      <div class="section-card">
+
+        <h4 class="section-title">
+
+          <i class="bi bi-person-circle me-2"></i>
+
+          Personal Information
+
+        </h4>
+
+        <div class="row">
+
+          <div class="col-md-6 mb-3">
+
+            <label class="form-label">
+              Full Name
+            </label>
+
+            <input
+              class="form-control"
+              [(ngModel)]="student.name">
+
+          </div>
+
+          <div class="col-md-6 mb-3">
+
+            <label class="form-label">
+              Roll Number
+            </label>
+
+            <input
+              class="form-control"
+              [(ngModel)]="student.rollNo">
+
+          </div>
+
+          <div class="col-md-6 mb-3">
+
+            <label class="form-label">
+              Email
+            </label>
+
+            <input
+              type="email"
+              class="form-control"
+              [(ngModel)]="student.email">
+
+          </div>
+
+          <div class="col-md-6 mb-3">
+
+            <label class="form-label">
+              Bus Pass Number
+            </label>
+
+            <input
+              class="form-control"
+              [(ngModel)]="student.busPassNumber">
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Academic -->
+
+      <div class="section-card mt-4">
+
+        <h4 class="section-title">
+
+          <i class="bi bi-mortarboard-fill me-2"></i>
+
+          Academic Information
+
+        </h4>
+
+        <div class="row">
+
+          <div class="col-md-6 mb-3">
+
+            <label class="form-label">
+              Department
+            </label>
+
+            <select
+              class="form-select"
+              [(ngModel)]="student.department">
+
+              <option value="">Select Department</option>
+
+              <option *ngFor="let d of departments" [value]="d">
+
+                {{d}}
+
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="col-md-6 mb-3">
+
+            <label class="form-label">
+              Year
+            </label>
+
+            <select
+              class="form-select"
+              [(ngModel)]="student.year">
+
+              <option *ngFor="let y of years" [value]="y">
+
+                {{y}}
+
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Transport -->
+
+      <div class="section-card mt-4">
+
+        <h4 class="section-title">
+
+          <i class="bi bi-bus-front-fill me-2"></i>
+
+          Transport Information
+
+        </h4>
+
+        <div class="row">
+
+          <div class="col-md-6 mb-3">
+
+            <label class="form-label">
+              Route
+            </label>
+
+            <select
+              class="form-select"
+              [(ngModel)]="student.routeId">
+
+              <option [ngValue]="0">
+
+                Select Route
+
+              </option>
+
+              <option
+                *ngFor="let route of routes"
+                [ngValue]="route.routeId">
+
+                {{route.routeName}}
+
+                ({{route.routeCode}})
+
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="col-md-6 mb-3">
+
+            <label class="form-label">
+              Bus
+            </label>
+
+            <select
+              class="form-select"
+              [(ngModel)]="student.busId">
+
+              <option [ngValue]="0">
+
+                Select Bus
+
+              </option>
+
+              <option
+                *ngFor="let bus of buses"
+                [ngValue]="bus.busId">
+
+                {{bus.busNo}}
+
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Security -->
+
+      <div class="section-card mt-4">
+
+        <h4 class="section-title">
+
+          <i class="bi bi-shield-lock-fill me-2"></i>
+
+          Security
+
+        </h4>
+
+        <div class="row">
+
+          <div class="col-md-6 mb-3">
+
+            <label class="form-label">
+
+              Password
+
+            </label>
+
+            <div class="input-group">
+
+              <input
+                [type]="showPassword ? 'text' : 'password'"
+                class="form-control"
+                [(ngModel)]="student.password"
+                (keyup)="checkStrength()">
+
+              <button
+                type="button"
+                class="btn btn-outline-secondary"
+                (click)="togglePassword()">
+
+                <i
+                  class="bi"
+                  [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'">
+
+                </i>
+
+              </button>
+
+            </div>
+
+            <small
+              class="text-primary">
+
+              Strength :
+
+              {{passwordStrength}}
+
+            </small>
+
+          </div>
+
+          <div class="col-md-6 mb-3">
+
+            <label class="form-label">
+
+              Confirm Password
+
+            </label>
+
+            <div class="input-group">
+
+              <input
+                [type]="showConfirmPassword ? 'text' : 'password'"
+                class="form-control"
+                [(ngModel)]="confirmPassword">
+
+              <button
+                type="button"
+                class="btn btn-outline-secondary"
+                (click)="toggleConfirmPassword()">
+
+                <i
+                  class="bi"
+                  [ngClass]="showConfirmPassword ? 'bi-eye-slash' : 'bi-eye'">
+
+                </i>
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ================= ADMIN ================= -->
+
+    <div *ngIf="role=='ADMIN'">
+
+      <div class="section-card">
+
+        <h4 class="section-title">
+
+          Admin Registration
+
+        </h4>
+
+        <input
+          class="form-control mb-3"
+          placeholder="Username"
+          [(ngModel)]="admin.username">
+
+        <input
+          class="form-control mb-3"
+          placeholder="Full Name"
+          [(ngModel)]="admin.fullName">
+
+        <input
+          class="form-control mb-3"
+          placeholder="Email"
+          [(ngModel)]="admin.email">
+
+        <input
+          type="password"
+          class="form-control mb-3"
+          placeholder="Password"
+          [(ngModel)]="admin.password">
+
+        <select
+          class="form-select"
+          [(ngModel)]="admin.role">
+
+          <option value="BUS_INCHARGE">
+
+            Bus Incharge
+
+          </option>
+
+          <option value="SUPER_ADMIN">
+
+            Super Admin
+
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+    <button
+      class="btn btn-primary btn-lg w-100 mt-4"
+      (click)="register()">
+
+      Register
+
+    </button>
+
+    <div class="text-center mt-4">
+
+      <a routerLink="/">
+
+        Already have an account? Login
+
+      </a>
+
+    </div>
+
+  </div>
+
+</div>

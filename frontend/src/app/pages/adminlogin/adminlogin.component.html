@@ -1,0 +1,101 @@
+<div class="login-page">
+
+  <div class="login-card">
+
+    <div class="icon-box">
+
+      <i class="bi bi-shield-lock-fill"></i>
+
+    </div>
+
+    <h1>Admin Login</h1>
+
+    <p>
+      Sign in to manage the Bus Crowd Prediction System
+    </p>
+
+    <div class="mb-4">
+
+      <label class="form-label">
+        Username / Email
+      </label>
+
+      <div class="input-group">
+
+        <span class="input-group-text">
+          <i class="bi bi-person-fill"></i>
+        </span>
+
+        <input class="form-control" type="text" placeholder="Enter Username or Email" [(ngModel)]="username">
+
+      </div>
+
+    </div>
+
+    <div class="mb-2">
+
+      <label class="form-label">
+        Password
+      </label>
+
+      <div class="input-group">
+
+        <span class="input-group-text">
+          <i class="bi bi-lock-fill"></i>
+        </span>
+
+        <input class="form-control" type="password" placeholder="Enter Password" [(ngModel)]="password">
+
+      </div>
+
+    </div>
+
+    <!-- Forgot Password -->
+
+    <div class="text-end mb-3">
+
+      <a routerLink="/admin-forgot-password" class="text-decoration-none">
+
+        Forgot Password?
+
+      </a>
+
+    </div>
+
+    <button class="login-btn w-100" (click)="login()">
+
+      <i class="bi bi-box-arrow-in-right me-2"></i>
+
+      Login
+
+    </button>
+
+    <div class="text-center mt-4">
+
+      <a routerLink="/register">
+
+        Create Student Account
+
+      </a>
+
+    </div>
+
+    <div class="text-center mt-3">
+
+      <a routerLink="/student-login">
+
+        Student Login
+
+      </a>
+
+    </div>
+
+    <div class="alert alert-danger mt-3" *ngIf="message">
+
+      {{message}}
+
+    </div>
+
+  </div>
+
+</div>

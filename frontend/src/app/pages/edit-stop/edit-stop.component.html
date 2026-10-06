@@ -1,0 +1,110 @@
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+
+            <h4 class="m-0">Edit Stop</h4>
+            <button class="btn btn-secondary btn-sm" routerLink="/stops">
+                <i class="bi bi-arrow-left"></i> Back to Stops
+            </button>
+
+        </div>
+
+        <div class="card-body">
+
+            <form [formGroup]="stopForm" (ngSubmit)="updateStop()">
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">Route</label>
+
+                        <select class="form-select" formControlName="routeId">
+
+                            <option value="">Select Route</option>
+
+                            <option *ngFor="let route of routes" [value]="route.routeId">
+
+                                {{route.routeName}}
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">Stop Name</label>
+
+                        <input type="text" class="form-control" formControlName="stopName">
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">Latitude</label>
+
+                        <input type="number" step="0.000001" class="form-control" formControlName="latitude">
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">Longitude</label>
+
+                        <input type="number" step="0.000001" class="form-control" formControlName="longitude">
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">Sequence</label>
+
+                        <input type="number" class="form-control" formControlName="sequence">
+
+                    </div>
+
+                    <div class="col-md-6 mb-3 d-flex align-items-center">
+
+                        <div class="form-check mt-4">
+
+                            <input type="checkbox" class="form-check-input" formControlName="isMajorStop">
+
+                            <label class="form-check-label">
+
+                                Major Stop
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="text-end">
+
+                    <button type="submit" class="btn btn-primary me-2">
+
+                        Update
+
+                    </button>
+
+                    <button type="button" class="btn btn-secondary" routerLink="/stops">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

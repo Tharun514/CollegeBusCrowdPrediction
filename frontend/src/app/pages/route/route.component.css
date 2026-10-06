@@ -1,0 +1,58 @@
+.table td,
+.table th {
+
+    vertical-align: middle;
+
+    white-space: normal;
+
+}
+
+.table td {
+
+    padding: 16px;
+
+}
+
+.table {
+
+    table-layout: auto;
+
+}
+
+/* ================= ACTION COLUMN ================= */
+
+.action-column {
+
+    width: 180px;
+
+    min-width: 180px;
+
+}
+
+/* ================= BUTTONS ================= */
+
+.action-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: nowrap;
+
+}
+
+/* Prevent buttons from shrinking */
+
+.action-buttons .btn {
+
+    white-space: nowrap;
+
+    min-width: 72px;
+
+    flex-shrink: 0;
+
+}

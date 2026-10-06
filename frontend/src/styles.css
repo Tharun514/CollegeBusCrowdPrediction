@@ -1,0 +1,2120 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap');
+
+/* ==========================================================================
+   GLOBAL GLASSMORPHIC / FUTURISTIC TECH THEME
+   ========================================================================== */
+
+:root {
+  --bg-dark: #090d16;
+  --bg-card: rgba(17, 24, 39, 0.65);
+  --bg-card-hover: rgba(31, 41, 55, 0.8);
+  --border-glow: rgba(99, 102, 241, 0.15);
+  --border-glow-hover: rgba(99, 102, 241, 0.4);
+
+  /* Crowd status colors */
+  --crowd-low: #10b981;
+  --crowd-medium: #f59e0b;
+  --crowd-high: #f43f5e;
+  --crowd-full: #8b5cf6;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: #F1F5F9 !important;
+  color: #1E293B;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.6);
+}
+
+/* ==========================================================================
+   CARD OVERRIDES (GLASSMORPHISM)
+   ========================================================================== */
+.card {
+  background: var(--bg-card) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  border-radius: 20px !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+  transition: all 0.3s ease !important;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35) !important;
+}
+
+.card-header {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 1.15rem !important;
+  padding: 18px 24px !important;
+}
+
+.card-body {
+  padding: 24px !important;
+}
+
+.card-footer {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.07) !important;
+}
+
+/* ==========================================================================
+   BUTTONS (NEON GRADIENTS & SCALING)
+   ========================================================================== */
+.btn {
+  border-radius: 12px !important;
+  padding: 10px 22px !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn:active {
+  transform: scale(0.96) !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%) !important;
+  border: none !important;
+  color: #fff !important;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35) !important;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%) !important;
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5) !important;
+  transform: translateY(-2px);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border: none !important;
+  color: #fff !important;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35) !important;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5) !important;
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%) !important;
+  border: none !important;
+  color: #fff !important;
+  box-shadow: 0 4px 14px rgba(244, 63, 94, 0.35) !important;
+}
+
+.btn-danger:hover {
+  background: linear-gradient(135deg, #e11d48 0%, #be123c 100%) !important;
+  box-shadow: 0 6px 20px rgba(244, 63, 94, 0.5) !important;
+  transform: translateY(-2px);
+}
+
+.btn-warning {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important;
+  border: none !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35) !important;
+}
+
+.btn-warning:hover {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5) !important;
+  transform: translateY(-2px);
+}
+
+.btn-info {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%) !important;
+  border: none !important;
+  color: #fff !important;
+  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.35) !important;
+}
+
+.btn-info:hover {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.5) !important;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: rgba(148, 163, 184, 0.15) !important;
+  border: 1px solid rgba(148, 163, 184, 0.25) !important;
+  color: #e2e8f0 !important;
+}
+
+.btn-secondary:hover {
+  background: rgba(148, 163, 184, 0.25) !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   INPUTS & SELECTS
+   ========================================================================== */
+.form-control,
+.form-select {
+  background-color: rgba(15, 23, 42, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #f1f5f9 !important;
+  border-radius: 12px !important;
+  height: 50px !important;
+  padding: 10px 16px !important;
+  font-size: 0.95rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.3) !important;
+  background-color: rgba(15, 23, 42, 0.8) !important;
+  outline: none !important;
+}
+
+.form-control::placeholder {
+  color: #64748b !important;
+}
+
+.input-group-text {
+  background-color: rgba(15, 23, 42, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #94a3b8 !important;
+  border-radius: 12px 0 0 12px !important;
+}
+
+.form-label,
+label {
+  color: #94a3b8 !important;
+  font-weight: 600 !important;
+  margin-bottom: 8px !important;
+  font-size: 0.9rem !important;
+}
+
+/* ==========================================================================
+   TABLES
+   ========================================================================== */
+.table {
+  color: #f1f5f9 !important;
+  background: transparent !important;
+  border-collapse: separate !important;
+  border-spacing: 0 8px !important;
+  width: 100% !important;
+}
+
+.table thead th {
+  background-color: rgba(15, 23, 42, 0.6) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  padding: 16px 20px !important;
+  border-top: none !important;
+}
+
+.table tbody tr {
+  background-color: #1e293b !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 12px !important;
+  transition: all 0.2s ease !important;
+}
+
+.table tbody tr:hover {
+  background-color: #334155 !important;
+}
+
+.table td {
+  padding: 16px 20px !important;
+  border: none !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  vertical-align: middle !important;
+  color: #cbd5e1 !important;
+}
+
+.table td:first-child {
+  border-left: 1px solid rgba(255, 255, 255, 0.04) !important;
+  border-radius: 10px 0 0 10px !important;
+}
+
+.table td:last-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.04) !important;
+  border-radius: 0 10px 10px 0 !important;
+}
+
+/* ==========================================================================
+   BADGES & OCCUPANCY LEVELS
+   ========================================================================== */
+.badge {
+  padding: 8px 14px !important;
+  border-radius: 20px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.75rem !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.badge.bg-primary {
+  background: rgba(79, 70, 229, 0.2) !important;
+  border: 1px solid rgba(79, 70, 229, 0.4) !important;
+  color: #818cf8 !important;
+}
+
+.badge.bg-success {
+  background: rgba(16, 185, 129, 0.15) !important;
+  border: 1px solid rgba(16, 185, 129, 0.4) !important;
+  color: #34d399 !important;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.25) !important;
+}
+
+.badge.bg-warning {
+  background: rgba(245, 158, 11, 0.15) !important;
+  border: 1px solid rgba(245, 158, 11, 0.4) !important;
+  color: #fbbf24 !important;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.25) !important;
+}
+
+.badge.bg-danger {
+  background: rgba(244, 63, 94, 0.15) !important;
+  border: 1px solid rgba(244, 63, 94, 0.4) !important;
+  color: #f87171 !important;
+  box-shadow: 0 0 12px rgba(244, 63, 94, 0.25) !important;
+}
+
+.badge.bg-dark {
+  background: rgba(139, 92, 246, 0.2) !important;
+  border: 1px solid rgba(139, 92, 246, 0.4) !important;
+  color: #a78bfa !important;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.3) !important;
+}
+
+/* ==========================================================================
+   PROGRESS BARS
+   ========================================================================== */
+.progress {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  height: 18px !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.progress-bar {
+  font-weight: 700 !important;
+  font-size: 0.75rem !important;
+  line-height: 18px !important;
+  border-radius: 10px !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  transition: width 0.6s ease;
+}
+
+.progress-bar.bg-success {
+  background: linear-gradient(90deg, #10b981, #059669) !important;
+}
+
+.progress-bar.bg-warning {
+  background: linear-gradient(90deg, #fbbf24, #f59e0b) !important;
+}
+
+.progress-bar.bg-danger {
+  background: linear-gradient(90deg, #f43f5e, #e11d48) !important;
+}
+
+/* ==========================================================================
+   ANIMATIONS & EFFECTS
+   ========================================================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.2s ease-out forwards;
+}
+
+/* Map Dark Theme styling for leaflet map */
+#map {
+  filter: invert(0.9) hue-rotate(200deg) brightness(0.9) contrast(1.1) !important;
+}
+
+.leaflet-bar a {
+  background-color: #1f2937 !important;
+  color: #fff !important;
+  border-bottom: 1px solid #374151 !important;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: #1f2937 !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Float Animation for Custom bus icon */
+@keyframes busFloat {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.float-bus {
+  animation: busFloat 3s ease-in-out infinite;
+}
+
+/* Glowing text classes */
+.text-glow {
+  text-shadow: 0 0 10px rgba(99, 102, 241, 0.6);
+}
+
+.text-glow-success {
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
+}
+
+.text-glow-danger {
+  text-shadow: 0 0 10px rgba(244, 63, 94, 0.6);
+}
+
+/* ==========================================================================
+   ADMIN PORTAL LIGHT THEME OVERRIDES
+   ========================================================================== */
+.admin-portal {
+  --bg-dark: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-card-hover: #ffffff;
+  --border-glow: rgba(99, 102, 241, 0.08);
+  --border-glow-hover: rgba(99, 102, 241, 0.15);
+
+  background: #f1f5f9 !important;
+  color: #1e293b !important;
+}
+
+.admin-portal html,
+.admin-portal body {
+  background: #f1f5f9 !important;
+  color: #1e293b !important;
+}
+
+/* Typography Overrides */
+.admin-portal .text-white,
+.admin-portal h1,
+.admin-portal h2,
+.admin-portal h3,
+.admin-portal h4,
+.admin-portal h5,
+.admin-portal h6 {
+  color: #0f172a !important;
+}
+
+.admin-portal .text-glow,
+.admin-portal .text-glow-success,
+.admin-portal .text-glow-danger {
+  text-shadow: none !important;
+  color: #0f172a !important;
+}
+
+.admin-portal .text-muted {
+  color: #64748b !important;
+}
+
+/* Cards Glassmorphism Overrides */
+.admin-portal .card {
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 16px !important;
+  color: #1e293b !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.admin-portal .card:hover {
+  transform: translateY(-2px) !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05) !important;
+}
+
+.admin-portal .card-header {
+  background: #f8fafc !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+.admin-portal .card-footer {
+  background: #f8fafc !important;
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+/* Forms & Inputs Overrides */
+.admin-portal .form-control,
+.admin-portal .form-select {
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #1e293b !important;
+}
+
+.admin-portal .form-control:focus,
+.admin-portal .form-select:focus {
+  background-color: #ffffff !important;
+  border-color: #4f46e5 !important;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15) !important;
+  color: #1e293b !important;
+}
+
+.admin-portal .form-control::placeholder {
+  color: #94a3b8 !important;
+}
+
+.admin-portal .input-group-text {
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #475569 !important;
+}
+
+.admin-portal .form-label,
+.admin-portal label {
+  color: #475569 !important;
+}
+
+/* Tables Overrides - Premium Light Card Rows */
+.admin-portal .table {
+  color: #1e293b !important;
+  border-collapse: separate !important;
+  border-spacing: 0 6px !important;
+  background: transparent !important;
+}
+
+.admin-portal .table thead th {
+  background: transparent !important;
+  border: none !important;
+  color: #475569 !important;
+  font-weight: 700 !important;
+  font-size: 13px;
+  letter-spacing: 0.06em !important;
+  padding: 10px 18px !important;
+  text-transform: uppercase !important;
+}
+
+.admin-portal .table tbody tr {
+  background-color: #ffffff !important;
+  background: #fff;
+  border: 1px solid #EEF2F7;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, .05);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.admin-portal .table tbody tr:hover {
+  background-color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.admin-portal .table td {
+
+  padding: 12px 18px !important;
+
+  font-size: 15px;
+
+}
+
+.admin-portal .table tbody tr td:first-child {
+  border-top-left-radius: 12px !important;
+  border-bottom-left-radius: 12px !important;
+}
+
+.admin-portal .table tbody tr td:last-child {
+  border-top-right-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+}
+
+/* Map Overrides for Admin Layout */
+.admin-portal #map {
+  filter: none !important;
+}
+
+.admin-portal .leaflet-bar a {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.admin-portal .leaflet-popup-content-wrapper,
+.admin-portal .leaflet-popup-tip {
+  background: #ffffff !important;
+  color: #1e293b !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+/* Scrollbars inside Admin Portal */
+.admin-portal ::-webkit-scrollbar-track {
+  background: #f1f5f9 !important;
+}
+
+.admin-portal ::-webkit-scrollbar-thumb {
+  background: #cbd5e1 !important;
+}
+
+.admin-portal ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8 !important;
+}
+
+/* Pagination Overrides for ngx-pagination */
+.admin-portal .ngx-pagination {
+  color: #334155 !important;
+}
+
+.admin-portal .ngx-pagination li {
+  color: #334155 !important;
+}
+
+.admin-portal .ngx-pagination .current {
+  background: #4f46e5 !important;
+  color: #ffffff !important;
+}
+
+.admin-portal .ngx-pagination a {
+  color: #4f46e5 !important;
+}
+
+.admin-portal .ngx-pagination a:hover {
+  background: #f1f5f9 !important;
+}
+
+/* Custom Search Input Group styling */
+.admin-portal .input-group {
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  border: 1px solid #cbd5e1 !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.2s ease !important;
+}
+
+.admin-portal .input-group:focus-within {
+  border-color: #4f46e5 !important;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15) !important;
+}
+
+.admin-portal .input-group .form-control,
+.admin-portal .input-group .input-group-text {
+  border: none !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+}
+
+.admin-portal .input-group .form-control:focus {
+  box-shadow: none !important;
+}
+
+.admin-portal .input-group .input-group-text {
+  color: #64748b !important;
+  padding-left: 14px !important;
+}
+
+/* Unique Premium Modern Buttons overrides */
+.admin-portal .btn {
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  padding: 8px 18px !important;
+  border-radius: 10px !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  font-size: 0.88rem !important;
+  border: 1px solid transparent !important;
+}
+
+/* Edit / Primary Buttons */
+.admin-portal .btn-primary {
+  background: rgba(99, 102, 241, 0.08) !important;
+  border: 1px solid rgba(99, 102, 241, 0.25) !important;
+  color: #4f46e5 !important;
+  box-shadow: none !important;
+}
+
+.admin-portal .btn-primary:hover {
+  background: #4f46e5 !important;
+  border-color: #4f46e5 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25) !important;
+  transform: translateY(-1px);
+}
+
+/* Delete / Danger Buttons */
+.admin-portal .btn-danger {
+  background: rgba(239, 68, 68, 0.08) !important;
+  border: 1px solid rgba(239, 68, 68, 0.25) !important;
+  color: #ef4444 !important;
+  box-shadow: none !important;
+}
+
+.admin-portal .btn-danger:hover {
+  background: #ef4444 !important;
+  border-color: #ef4444 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25) !important;
+  transform: translateY(-1px);
+}
+
+/* Add / Save / Success Buttons */
+.admin-portal .btn-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border: none !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2) !important;
+}
+
+.admin-portal .btn-success:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35) !important;
+  transform: translateY(-1px);
+}
+
+/* Cancel / Back / Secondary Buttons */
+.admin-portal .btn-secondary {
+  background: rgba(100, 116, 139, 0.08) !important;
+  border: 1px solid rgba(100, 116, 139, 0.2) !important;
+  color: #475569 !important;
+  box-shadow: none !important;
+}
+
+.admin-portal .btn-secondary:hover {
+  background: #475569 !important;
+  border-color: #475569 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.admin-portal .table td:last-child {
+  white-space: nowrap !important;
+  text-align: center !important;
+}
+
+/* Size Adjustments for Table Row Buttons */
+.admin-portal .table td .btn-sm {
+  padding: 4px 10px !important;
+  font-size: 0.78rem !important;
+  border-radius: 8px !important;
+}
+
+/* Page Header Icons */
+.admin-portal h2 i,
+.admin-portal h3 i,
+.admin-portal h4 i {
+  color: #4f46e5 !important;
+  margin-right: 12px !important;
+  vertical-align: middle !important;
+}
+
+/* ==========================================================================
+   STUDENT PORTAL LIGHT THEME OVERRIDES (TEAL COLOR PALETTE)
+   ========================================================================== */
+.student-portal {
+  --bg-dark: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-card-hover: #ffffff;
+  --border-glow: rgba(13, 148, 136, 0.08);
+  --border-glow-hover: rgba(13, 148, 136, 0.15);
+
+  background: #f1f5f9 !important;
+  color: #1e293b !important;
+}
+
+.student-portal html,
+.student-portal body {
+  background: #f1f5f9 !important;
+  color: #1e293b !important;
+}
+
+/* Typography Overrides */
+.student-portal .text-white,
+.student-portal h1,
+.student-portal h2,
+.student-portal h3,
+.student-portal h4,
+.student-portal h5,
+.student-portal h6 {
+  color: #0f172a !important;
+}
+
+.student-portal .text-glow,
+.student-portal .text-glow-success,
+.student-portal .text-glow-danger {
+  text-shadow: none !important;
+  color: #0f172a !important;
+}
+
+.student-portal .text-muted {
+  color: #64748b !important;
+}
+
+/* Cards Glassmorphism Overrides */
+.student-portal .card {
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 16px !important;
+  color: #1e293b !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.student-portal .card:hover {
+  transform: translateY(-2px) !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05) !important;
+}
+
+.student-portal .card-header {
+  background: #f0fdfa !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  color: #0d9488 !important;
+  font-weight: 700 !important;
+}
+
+.student-portal .card-footer {
+  background: #f8fafc !important;
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+/* Forms & Inputs Overrides */
+.student-portal .form-control,
+.student-portal .form-select {
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #1e293b !important;
+}
+
+.student-portal .form-control:focus,
+.student-portal .form-select:focus {
+  background-color: #ffffff !important;
+  border-color: #0d9488 !important;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15) !important;
+  color: #1e293b !important;
+}
+
+.student-portal .form-control::placeholder {
+  color: #94a3b8 !important;
+}
+
+.student-portal .input-group-text {
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #475569 !important;
+}
+
+.student-portal .form-label,
+.student-portal label {
+  color: #475569 !important;
+}
+
+/* Tables Overrides - Premium Light Card Rows */
+.student-portal .table {
+  color: #1e293b !important;
+  border-collapse: separate !important;
+  border-spacing: 0 10px !important;
+  background: transparent !important;
+}
+
+.student-portal .table tbody tr {
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02) !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.student-portal .table tbody tr:hover {
+  background-color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.student-portal .table td {
+  border: none !important;
+  padding: 16px 20px !important;
+  color: #334155 !important;
+  vertical-align: middle !important;
+}
+
+.student-portal .table tbody tr td:first-child {
+  border-top-left-radius: 12px !important;
+  border-bottom-left-radius: 12px !important;
+}
+
+.student-portal .table tbody tr td:last-child {
+  border-top-right-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+}
+
+/* Map Overrides for Student Layout */
+.student-portal #map {
+  filter: none !important;
+}
+
+.student-portal .leaflet-bar a {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.student-portal .leaflet-popup-content-wrapper,
+.student-portal .leaflet-popup-tip {
+  background: #ffffff !important;
+  color: #1e293b !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+/* Scrollbars inside Student Portal */
+.student-portal ::-webkit-scrollbar-track {
+  background: #f1f5f9 !important;
+}
+
+.student-portal ::-webkit-scrollbar-thumb {
+  background: #cbd5e1 !important;
+}
+
+.student-portal ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8 !important;
+}
+
+/* Pagination Overrides for ngx-pagination */
+.student-portal .ngx-pagination {
+  color: #334155 !important;
+}
+
+.student-portal .ngx-pagination li {
+  color: #334155 !important;
+}
+
+.student-portal .ngx-pagination .current {
+  background: #0d9488 !important;
+  color: #ffffff !important;
+}
+
+.student-portal .ngx-pagination a {
+  color: #0d9488 !important;
+}
+
+.student-portal .ngx-pagination a:hover {
+  background: #f1f5f9 !important;
+}
+
+/* Custom Search Input Group styling */
+.student-portal .input-group {
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  border: 1px solid #cbd5e1 !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.2s ease !important;
+}
+
+.student-portal .input-group:focus-within {
+  border-color: #0d9488 !important;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15) !important;
+}
+
+.student-portal .input-group .form-control,
+.student-portal .input-group .input-group-text {
+  border: none !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+}
+
+.student-portal .input-group .form-control:focus {
+  box-shadow: none !important;
+}
+
+.student-portal .input-group .input-group-text {
+  color: #64748b !important;
+  padding-left: 14px !important;
+}
+
+/* Unique Premium Modern Buttons overrides */
+.student-portal .btn {
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  padding: 8px 18px !important;
+  border-radius: 10px !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  font-size: 0.88rem !important;
+  border: 1px solid transparent !important;
+}
+
+/* Edit / Primary Buttons */
+.student-portal .btn-primary {
+  background: rgba(13, 148, 136, 0.08) !important;
+  border: 1px solid rgba(13, 148, 136, 0.25) !important;
+  color: #0d9488 !important;
+  box-shadow: none !important;
+}
+
+.student-portal .btn-primary:hover {
+  background: #0d9488 !important;
+  border-color: #0d9488 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25) !important;
+  transform: translateY(-1px);
+}
+
+/* Delete / Danger Buttons */
+.student-portal .btn-danger {
+  background: rgba(239, 68, 68, 0.08) !important;
+  border: 1px solid rgba(239, 68, 68, 0.25) !important;
+  color: #ef4444 !important;
+  box-shadow: none !important;
+}
+
+.student-portal .btn-danger:hover {
+  background: #ef4444 !important;
+  border-color: #ef4444 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25) !important;
+  transform: translateY(-1px);
+}
+
+/* Add / Save / Success Buttons */
+.student-portal .btn-success {
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%) !important;
+  border: none !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 10px rgba(13, 148, 136, 0.2) !important;
+}
+
+.student-portal .btn-success:hover {
+  background: linear-gradient(135deg, #0f766e 0%, #115e59 100%) !important;
+  box-shadow: 0 6px 16px rgba(13, 148, 136, 0.35) !important;
+  transform: translateY(-1px);
+}
+
+/* Cancel / Back / Secondary Buttons */
+.student-portal .btn-secondary {
+  background: rgba(100, 116, 139, 0.08) !important;
+  border: 1px solid rgba(100, 116, 139, 0.2) !important;
+  color: #475569 !important;
+  box-shadow: none !important;
+}
+
+.student-portal .btn-secondary:hover {
+  background: #475569 !important;
+  border-color: #475569 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.student-portal .table td:last-child {
+  white-space: nowrap !important;
+  text-align: center !important;
+}
+
+/* Size Adjustments for Table Row Buttons */
+.student-portal .table td .btn-sm {
+  padding: 4px 10px !important;
+  font-size: 0.78rem !important;
+  border-radius: 8px !important;
+}
+
+/* Page Header Icons */
+.student-portal h2 i,
+.student-portal h3 i,
+.student-portal h4 i {
+  color: #0d9488 !important;
+  margin-right: 12px !important;
+  vertical-align: middle !important;
+}
+
+.student-portal .btn-outline-indigo {
+  color: #0d9488 !important;
+  border: 1px solid rgba(13, 148, 136, 0.25) !important;
+  background: rgba(13, 148, 136, 0.05) !important;
+}
+
+.student-portal .btn-outline-indigo:hover {
+  background: #0d9488 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.2) !important;
+}
+
+html,
+body {
+
+  height: 100%;
+
+  margin: 0;
+
+  background: #F1F5F9;
+
+}
+
+app-root {
+
+  display: block;
+
+  height: 100%;
+
+  background: #F1F5F9;
+
+}
+
+/* ==========================================================
+   BUS CROWD ENTERPRISE DARK THEME
+   PART 1
+========================================================== */
+
+body.dark-theme {
+  background: #0f172a !important;
+  color: #e5e7eb !important;
+  transition: all .25s ease;
+}
+
+/* Main Layout */
+
+body.dark-theme .admin-portal,
+body.dark-theme .student-portal,
+body.dark-theme app-root,
+body.dark-theme .main-layout,
+body.dark-theme .content-area,
+body.dark-theme .page-content {
+  background: #0f172a !important;
+  color: #f8fafc !important;
+}
+
+/* Navbar */
+
+body.dark-theme .top-navbar,
+body.dark-theme .navbar,
+body.dark-theme nav {
+  background: #111827 !important;
+  color: #ffffff !important;
+  border-bottom: 1px solid #1f2937 !important;
+}
+
+/* Sidebar */
+
+body.dark-theme .left-sidebar,
+body.dark-theme .sidebar,
+body.dark-theme aside {
+  background: #111827 !important;
+  color: white !important;
+  border-right: 1px solid #1f2937;
+}
+
+body.dark-theme .sidebar-title,
+body.dark-theme .sidebar-section,
+body.dark-theme .sidebar-heading {
+  color: #94a3b8 !important;
+}
+
+body.dark-theme .sidebar a,
+body.dark-theme .sidebar-link,
+body.dark-theme .menu-item {
+  color: #cbd5e1 !important;
+}
+
+body.dark-theme .sidebar a:hover,
+body.dark-theme .sidebar-link:hover,
+body.dark-theme .menu-item:hover {
+  background: #1e293b !important;
+  color: white !important;
+}
+
+body.dark-theme .sidebar .active,
+body.dark-theme .menu-item.active {
+  background: linear-gradient(135deg, #4f46e5, #2563eb) !important;
+  color: white !important;
+}
+
+/* Dashboard Cards */
+
+body.dark-theme .card,
+body.dark-theme .settings-card,
+body.dark-theme .dashboard-card,
+body.dark-theme .stat-card,
+body.dark-theme .glass-card {
+
+  background: #1e293b !important;
+
+  color: white !important;
+
+  border: 1px solid #334155 !important;
+
+  box-shadow: none !important;
+
+}
+
+/* Headers */
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme h5,
+body.dark-theme h6 {
+
+  color: #ffffff !important;
+
+}
+
+body.dark-theme p,
+body.dark-theme span,
+body.dark-theme small,
+body.dark-theme label {
+
+  color: #cbd5e1 !important;
+
+}
+
+/* Page Titles */
+
+body.dark-theme .page-header,
+body.dark-theme .page-title,
+body.dark-theme .section-title {
+
+  color: white !important;
+
+}
+
+/* Search */
+
+body.dark-theme .search-input input,
+body.dark-theme input[type=text],
+body.dark-theme input[type=email],
+body.dark-theme input[type=password],
+body.dark-theme textarea,
+body.dark-theme select {
+
+  background: #0f172a !important;
+
+  color: white !important;
+
+  border: 1px solid #334155 !important;
+
+}
+
+body.dark-theme input::placeholder,
+body.dark-theme textarea::placeholder {
+
+  color: #94a3b8 !important;
+
+}
+
+body.dark-theme input:focus,
+body.dark-theme textarea:focus,
+body.dark-theme select:focus {
+
+  border-color: #4f46e5 !important;
+
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, .25) !important;
+
+}
+
+/* ==========================================================
+   BUS CROWD ENTERPRISE DARK THEME
+   PART 2
+========================================================== */
+
+/* ===========================
+   TABLES
+=========================== */
+
+body.dark-theme table,
+body.dark-theme .table {
+  background: #111827 !important;
+  color: #f8fafc !important;
+}
+
+body.dark-theme .table thead,
+body.dark-theme .table thead tr,
+body.dark-theme .table thead th {
+  background: #1e293b !important;
+  color: #ffffff !important;
+  border-color: #374151 !important;
+}
+
+body.dark-theme .table tbody tr {
+  background: #111827 !important;
+  transition: .25s;
+}
+
+body.dark-theme .table tbody tr:hover {
+  background: #1e293b !important;
+}
+
+body.dark-theme .table td,
+body.dark-theme .table th {
+  border-color: #374151 !important;
+  color: #e5e7eb !important;
+}
+
+/* ===========================
+   PAGINATION
+=========================== */
+
+body.dark-theme .ngx-pagination a,
+body.dark-theme .page-link {
+
+  background: #1e293b !important;
+
+  color: white !important;
+
+  border-color: #374151 !important;
+
+}
+
+body.dark-theme .ngx-pagination .current,
+body.dark-theme .page-item.active .page-link {
+
+  background: #4f46e5 !important;
+
+  border-color: #4f46e5 !important;
+
+  color: white !important;
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+body.dark-theme .btn-primary,
+body.dark-theme .save-btn {
+
+  background: linear-gradient(135deg, #4f46e5, #2563eb) !important;
+
+  border: none !important;
+
+  color: white !important;
+
+}
+
+body.dark-theme .btn-success {
+
+  background: #16a34a !important;
+
+  color: white !important;
+
+}
+
+body.dark-theme .btn-danger {
+
+  background: #dc2626 !important;
+
+  color: white !important;
+
+}
+
+body.dark-theme .btn-warning {
+
+  background: #ca8a04 !important;
+
+  color: white !important;
+
+}
+
+body.dark-theme .btn-secondary {
+
+  background: #374151 !important;
+
+  color: white !important;
+
+}
+
+body.dark-theme button:hover {
+
+  opacity: .92;
+
+}
+
+/* ===========================
+   FORMS
+=========================== */
+
+body.dark-theme .form-control,
+body.dark-theme .form-select {
+
+  background: #111827 !important;
+
+  color: white !important;
+
+  border: 1px solid #374151 !important;
+
+}
+
+body.dark-theme .form-control:focus,
+body.dark-theme .form-select:focus {
+
+  background: #111827 !important;
+
+  color: white !important;
+
+}
+
+/* ===========================
+   SETTINGS PAGE
+=========================== */
+
+body.dark-theme .settings-page {
+
+  background: #0f172a !important;
+
+}
+
+body.dark-theme .settings-menu {
+
+  background: #111827 !important;
+
+}
+
+body.dark-theme .settings-content {
+
+  background: transparent !important;
+
+}
+
+body.dark-theme .theme-card {
+
+  background: #111827 !important;
+
+  border: 1px solid #374151 !important;
+
+  color: white !important;
+
+}
+
+body.dark-theme .theme-card.active {
+
+  border: 2px solid #4f46e5 !important;
+
+}
+
+body.dark-theme .theme-card p {
+
+  color: #cbd5e1 !important;
+
+}
+
+/* ===========================
+   DROPDOWNS
+=========================== */
+
+body.dark-theme .dropdown-menu {
+
+  background: #111827 !important;
+
+  border: 1px solid #374151 !important;
+
+}
+
+body.dark-theme .dropdown-item {
+
+  color: white !important;
+
+}
+
+body.dark-theme .dropdown-item:hover {
+
+  background: #1e293b !important;
+
+}
+
+/* ===========================
+   TOASTR
+=========================== */
+
+body.dark-theme .toast {
+
+  background: #111827 !important;
+
+  color: white !important;
+
+}
+
+body.dark-theme .toast-success {
+
+  border-left: 5px solid #22c55e !important;
+
+}
+
+body.dark-theme .toast-error {
+
+  border-left: 5px solid #ef4444 !important;
+
+}
+
+body.dark-theme .toast-warning {
+
+  border-left: 5px solid #f59e0b !important;
+
+}
+
+/* ==========================================================
+   BUS CROWD ENTERPRISE DARK THEME
+   PART 3
+========================================================== */
+
+/* ===========================
+   DASHBOARD
+=========================== */
+
+body.dark-theme .dashboard-container,
+body.dark-theme .dashboard-content,
+body.dark-theme .dashboard-page {
+  background: #0f172a !important;
+}
+
+body.dark-theme .stat-card,
+body.dark-theme .summary-card,
+body.dark-theme .info-card,
+body.dark-theme .analytics-card {
+  background: #111827 !important;
+  color: #fff !important;
+  border: 1px solid #374151 !important;
+}
+
+body.dark-theme .stat-card h2,
+body.dark-theme .stat-card h3,
+body.dark-theme .stat-card h4 {
+  color: #fff !important;
+}
+
+body.dark-theme .stat-card p {
+  color: #cbd5e1 !important;
+}
+
+/* ===========================
+   PROFILE
+=========================== */
+
+body.dark-theme .profile-card,
+body.dark-theme .profile-container,
+body.dark-theme .profile-content {
+  background: #111827 !important;
+  color: #fff !important;
+  border: 1px solid #374151 !important;
+}
+
+body.dark-theme .profile-avatar {
+  border: 3px solid #4f46e5 !important;
+}
+
+/* ===========================
+   COLLEGE LOGO
+=========================== */
+
+body.dark-theme .logo-placeholder {
+  background: #111827 !important;
+  border: 2px dashed #4f46e5 !important;
+}
+
+body.dark-theme .logo-preview {
+  background: #111827 !important;
+}
+
+/* ===========================
+   STUDENT MODULE
+=========================== */
+
+body.dark-theme .student-card,
+body.dark-theme .student-container {
+  background: #111827 !important;
+  color: white !important;
+}
+
+/* ===========================
+   DRIVER MODULE
+=========================== */
+
+body.dark-theme .driver-card,
+body.dark-theme .driver-container {
+  background: #111827 !important;
+  color: white !important;
+}
+
+/* ===========================
+   BUS MODULE
+=========================== */
+
+body.dark-theme .bus-card,
+body.dark-theme .bus-container {
+  background: #111827 !important;
+  color: white !important;
+}
+
+/* ===========================
+   ROUTE MODULE
+=========================== */
+
+body.dark-theme .route-card,
+body.dark-theme .route-container {
+  background: #111827 !important;
+  color: white !important;
+}
+
+/* ===========================
+   ATTENDANCE
+=========================== */
+
+body.dark-theme .attendance-card,
+body.dark-theme .attendance-container {
+  background: #111827 !important;
+}
+
+/* ===========================
+   NOTIFICATIONS
+=========================== */
+
+body.dark-theme .notification-card,
+body.dark-theme .notification-item {
+  background: #111827 !important;
+  color: white !important;
+  border-color: #374151 !important;
+}
+
+/* ===========================
+   MODALS
+=========================== */
+
+body.dark-theme .modal-content {
+  background: #111827 !important;
+  color: white !important;
+}
+
+body.dark-theme .modal-header,
+body.dark-theme .modal-footer {
+  border-color: #374151 !important;
+}
+
+/* ===========================
+   BREADCRUMB
+=========================== */
+
+body.dark-theme .breadcrumb {
+  background: transparent !important;
+}
+
+body.dark-theme .breadcrumb-item {
+  color: #cbd5e1 !important;
+}
+
+/* ===========================
+   LINKS
+=========================== */
+
+body.dark-theme a {
+  color: #93c5fd;
+}
+
+body.dark-theme a:hover {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   BUS CROWD ENTERPRISE DARK THEME - CORE OVERRIDES
+   ========================================================================== */
+
+body.dark-theme {
+  background-color: #090d16 !important;
+}
+
+body.dark-theme .app-layout {
+  background: #090d16 !important;
+}
+
+body.dark-theme .top-navbar {
+  background: rgba(17, 24, 39, 0.7) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-theme .left-sidebar {
+  background: rgba(17, 24, 39, 0.75) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-theme .content-area {
+  background: #090d16 !important;
+}
+
+body.dark-theme app-footer {
+  display: block !important;
+  background: #111827 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-theme .footer {
+  background: transparent !important;
+  border-top: none !important;
+  color: #94a3b8 !important;
+}
+
+/* ==========================================
+   SIDEBAR COMPONENT OVERRIDES
+   ========================================== */
+body.dark-theme .sidebar {
+  background: transparent !important;
+  color: #cbd5e1 !important;
+}
+
+body.dark-theme .sidebar-header {
+  background: rgba(15, 23, 42, 0.2) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-theme .sidebar-brand {
+  color: #ffffff !important;
+}
+
+body.dark-theme .sidebar-brand i {
+  color: #6366f1 !important;
+}
+
+body.dark-theme .close-btn {
+  color: #cbd5e1 !important;
+}
+
+body.dark-theme .close-btn:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+}
+
+body.dark-theme .menu-section {
+  color: #6366f1 !important;
+}
+
+body.dark-theme .menu-link {
+  color: #94a3b8 !important;
+}
+
+body.dark-theme .menu-link:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #ffffff !important;
+}
+
+body.dark-theme .menu-link.active {
+  color: #ffffff !important;
+  background: rgba(99, 102, 241, 0.15) !important;
+  border: 1px solid rgba(99, 102, 241, 0.3) !important;
+}
+
+body.dark-theme .menu-link.active .menu-icon {
+  background: #6366f1 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5) !important;
+}
+
+body.dark-theme .sidebar-footer {
+  background: rgba(15, 23, 42, 0.2) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-theme .version {
+  color: #cbd5e1 !important;
+}
+
+body.dark-theme .sidebar.collapsed .menu-section::after {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ==========================================
+   NAVBAR COMPONENT OVERRIDES
+   ========================================== */
+body.dark-theme .top-nav {
+  background: transparent !important;
+  border-bottom: none !important;
+}
+
+body.dark-theme .menu-btn {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+body.dark-theme .menu-btn:hover {
+  background: rgba(99, 102, 241, 0.15) !important;
+}
+
+body.dark-theme .menu-line {
+  background: #cbd5e1 !important;
+}
+
+body.dark-theme .menu-btn:hover .menu-line {
+  background: #818cf8 !important;
+}
+
+body.dark-theme .brand-logo {
+  background: #6366f1 !important;
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.4) !important;
+}
+
+body.dark-theme .brand-text h4 {
+  color: #ffffff !important;
+}
+
+body.dark-theme .brand-text span {
+  color: #94a3b8 !important;
+}
+
+body.dark-theme .search-box input {
+  background: rgba(15, 23, 42, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #f1f5f9 !important;
+}
+
+body.dark-theme .search-box input:focus {
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.3) !important;
+  background: rgba(15, 23, 42, 0.8) !important;
+}
+
+body.dark-theme .nav-link {
+  color: #cbd5e1 !important;
+}
+
+body.dark-theme .nav-link i {
+  color: #94a3b8 !important;
+}
+
+body.dark-theme .nav-link:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #ffffff !important;
+}
+
+body.dark-theme .nav-link:hover i {
+  color: #818cf8 !important;
+}
+
+body.dark-theme .nav-link.active {
+  background: rgba(99, 102, 241, 0.15) !important;
+  color: #818cf8 !important;
+  border: 1px solid rgba(99, 102, 241, 0.2) !important;
+}
+
+body.dark-theme .nav-link.active i {
+  color: #818cf8 !important;
+}
+
+body.dark-theme .icon-btn {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #cbd5e1 !important;
+}
+
+body.dark-theme .icon-btn:hover {
+  background: rgba(99, 102, 241, 0.15) !important;
+  color: #ffffff !important;
+}
+
+body.dark-theme .profile-details strong {
+  color: #ffffff !important;
+}
+
+body.dark-theme .profile-details small {
+  color: #94a3b8 !important;
+}
+
+body.dark-theme .avatar {
+  background: #6366f1 !important;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.3) !important;
+}
+
+body.dark-theme .notification-dropdown,
+body.dark-theme .search-dropdown {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-theme .dropdown-header {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-theme .dropdown-header h6 {
+  color: #ffffff !important;
+}
+
+body.dark-theme .mark-read {
+  color: #818cf8 !important;
+}
+
+body.dark-theme .notification-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+body.dark-theme .notification-item:hover {
+  background: rgba(255, 255, 255, 0.02) !important;
+}
+
+body.dark-theme .notification-title {
+  color: #ffffff !important;
+}
+
+body.dark-theme .notification-message {
+  color: #94a3b8 !important;
+}
+
+body.dark-theme .search-card:hover {
+  background: rgba(255, 255, 255, 0.02) !important;
+}
+
+body.dark-theme .search-name {
+  color: #ffffff !important;
+}
+
+body.dark-theme .search-desc {
+  color: #94a3b8 !important;
+}
+
+body.dark-theme .search-badge {
+  background: rgba(99, 102, 241, 0.15) !important;
+  color: #818cf8 !important;
+}
+
+/* ==========================================
+   SETTINGS & THEME PAGE COMPONENT OVERRIDES
+   ========================================== */
+body.dark-theme .settings-page {
+  background: transparent !important;
+}
+
+body.dark-theme .settings-menu,
+body.dark-theme .settings-card {
+  background: rgba(17, 24, 39, 0.65) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+}
+
+body.dark-theme .menu-item {
+  color: #cbd5e1 !important;
+}
+
+body.dark-theme .menu-item:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #ffffff !important;
+}
+
+body.dark-theme .menu-item.active {
+  background: linear-gradient(135deg, #6366f1, #3b82f6) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3) !important;
+}
+
+body.dark-theme .card-header h4 {
+  color: #ffffff !important;
+}
+
+body.dark-theme .card-header p {
+  color: #94a3b8 !important;
+}
+
+body.dark-theme .theme-card {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  background: rgba(15, 23, 42, 0.4) !important;
+}
+
+body.dark-theme .theme-card h5 {
+  color: #ffffff !important;
+}
+
+body.dark-theme .theme-card p {
+  color: #cbd5e1 !important;
+}
+
+body.dark-theme .theme-card:hover {
+  border-color: #6366f1 !important;
+}
+
+body.dark-theme .theme-card.active {
+  border-color: #6366f1 !important;
+  background: rgba(99, 102, 241, 0.1) !important;
+}
+
+body.dark-theme .theme-card i {
+  color: #818cf8 !important;
+}
+
+body.dark-theme .active-badge {
+  background: transparent !important;
+  color: #818cf8 !important;
+}
+
+body.dark-theme .save-btn {
+  background: linear-gradient(135deg, #6366f1, #2563eb) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3) !important;
+}
+
+body.dark-theme .save-btn:hover {
+  box-shadow: 0 15px 35px rgba(99, 102, 241, 0.45) !important;
+}
+
+/* ==========================================
+   PREMIUM TABLES OVERRIDES (LIGHT & DARK THEMES)
+   ========================================== */
+.table.table-bordered {
+  border: none !important;
+}
+
+.table.table-bordered td,
+.table.table-bordered th {
+  border: none !important;
+}
+
+.table td,
+.table th {
+  background-color: transparent !important;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: unset !important;
+}
+
+.table thead,
+.table thead.table-dark {
+  background: transparent !important;
+}
+
+.table thead.table-dark th {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Light Theme cell text color override to guarantee legibility on light/white card backgrounds */
+.admin-portal .table td {
+  color: #1e293b !important;
+}
+
+body.dark-theme .table {
+  color: #cbd5e1 !important;
+  border-collapse: separate !important;
+  border-spacing: 0 8px !important;
+}
+
+body.dark-theme .table thead th {
+  background: transparent !important;
+  border: none !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  font-size: 13px !important;
+  letter-spacing: 0.06em !important;
+}
+
+body.dark-theme .table tbody tr {
+  background-color: rgba(17, 24, 39, 0.65) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.2s ease !important;
+}
+
+body.dark-theme .table tbody tr:hover {
+  background-color: rgba(31, 41, 55, 0.8) !important;
+  transform: translateY(-2px) !important;
+}
+
+body.dark-theme .table td {
+  border: none !important;
+  padding: 14px 18px !important;
+  vertical-align: middle !important;
+  color: #cbd5e1 !important;
+}
+
+body.dark-theme .table tbody tr td:first-child {
+  border-top-left-radius: 12px !important;
+  border-bottom-left-radius: 12px !important;
+}
+
+body.dark-theme .table tbody tr td:last-child {
+  border-top-right-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+}
+
+body.dark-theme .table td .btn-sm {
+  padding: 4px 10px !important;
+  font-size: 0.78rem !important;
+  border-radius: 8px !important;
+}
+
+/* ==========================================
+   INPUT GROUPS & SEARCH BARS OVERRIDES (DARK THEME)
+   ========================================== */
+body.dark-theme .input-group {
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background-color: rgba(15, 23, 42, 0.6) !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
+}
+
+body.dark-theme .input-group:focus-within {
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.3) !important;
+}
+
+body.dark-theme .input-group .form-control,
+body.dark-theme .input-group .input-group-text,
+body.dark-theme .input-group-text.bg-white {
+  border: none !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  color: #f1f5f9 !important;
+}
+
+body.dark-theme .input-group .input-group-text i {
+  color: #94a3b8 !important;
+}

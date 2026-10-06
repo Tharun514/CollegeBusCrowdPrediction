@@ -1,0 +1,108 @@
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="m-0 d-flex align-items-center"><i class="bi bi-calendar-check-fill"></i> Attendance Management</h2>
+        <button class="btn btn-success" routerLink="/add-attendance">
+            <i class="bi bi-plus-circle"></i> Add Attendance
+        </button>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-5">
+            <div class="input-group">
+                <span class="input-group-text bg-white border-end-0">
+                    <i class="bi bi-search text-muted"></i>
+                </span>
+                <input type="text" class="form-control border-start-0 ps-0"
+                    placeholder="Search by Student ID, Bus ID, Scan Type" [(ngModel)]="searchText"
+                    (keyup)="filterAttendances()">
+            </div>
+        </div>
+        <div class="col-md-7 text-end">
+            <span class="badge bg-primary fs-6">
+                Total Attendance : {{attendances.length}}
+            </span>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped table-hover">
+
+        <thead class="table-dark">
+
+            <tr>
+
+                <th>ID</th>
+
+                <th>Student ID</th>
+
+                <th>Bus ID</th>
+
+                <th>Scan Time</th>
+
+                <th>Scan Type</th>
+
+                <th>Created At</th>
+
+                <th>Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let attendance of attendances">
+
+                <td>{{attendance.attendanceId}}</td>
+
+                <td>{{attendance.studentId}}</td>
+
+                <td>{{attendance.busId}}</td>
+
+                <td>{{attendance.scanTime}}</td>
+
+                <td>
+
+                    <span class="badge bg-success" *ngIf="attendance.scanType == 'BOARDING'">
+
+                        BOARDING
+
+                    </span>
+
+                    <span class="badge bg-warning text-dark" *ngIf="attendance.scanType == 'ALIGHTING'">
+
+                        ALIGHTING
+
+                    </span>
+
+                </td>
+
+                <td>{{attendance.createdAt}}</td>
+
+                <td class="action-column">
+
+                    <div class="action-buttons">
+
+                        <button class="btn btn-primary btn-sm" (click)="editAttendance(attendance.attendanceId!)">
+
+                            Edit
+
+                        </button>
+
+                        <button class="btn btn-danger btn-sm" (click)="deleteAttendance(attendance.attendanceId!)">
+
+                            Delete
+
+                        </button>
+
+                    </div>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>

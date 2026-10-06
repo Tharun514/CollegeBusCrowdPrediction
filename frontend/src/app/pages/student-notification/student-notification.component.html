@@ -1,0 +1,64 @@
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-info text-white">
+
+            <h4>My Notifications</h4>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-hover">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Message</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Date</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr *ngFor="let n of notifications; let i=index">
+
+                            <td>{{i+1}}</td>
+
+                            <td>{{n.title}}</td>
+
+                            <td>{{n.message}}</td>
+
+                            <td>{{n.type}}</td>
+
+                            <td>
+                                <span class="badge" [ngClass]="n.isRead ? 'bg-success':'bg-warning text-dark'">
+                                    {{n.isRead ? 'Read':'Unread'}}
+                                </span>
+                            </td>
+
+                            <td>{{n.createdAt | date:'dd-MM-yyyy hh:mm a'}}</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,113 @@
+<div class="settings-page">
+
+    <div class="page-header">
+        <h2>
+            <i class="bi bi-palette-fill"></i>
+            Theme Settings
+        </h2>
+
+        <p>Customize the appearance of the application.</p>
+    </div>
+
+    <div class="settings-container">
+
+        <!-- Left Menu -->
+
+        <div class="settings-menu">
+
+            <div class="menu-item" routerLink="/settings">
+                <i class="bi bi-building"></i>
+                <span>College Information</span>
+            </div>
+
+            <div class="menu-item" routerLink="/college-logo">
+                <i class="bi bi-image"></i>
+                <span>College Logo</span>
+            </div>
+
+            <div class="menu-item" routerLink="/profile">
+                <i class="bi bi-person-circle"></i>
+                <span>Admin Profile</span>
+            </div>
+
+            <div class="menu-item" routerLink="/admin-change-password">
+                <i class="bi bi-lock-fill"></i>
+                <span>Change Password</span>
+            </div>
+
+            <div class="menu-item active">
+                <i class="bi bi-palette-fill"></i>
+                <span>Theme</span>
+            </div>
+
+            <div class="menu-item" routerLink="/database-backup">
+                <i class="bi bi-database-fill"></i>
+                <span>Database Backup</span>
+            </div>
+
+        </div>
+
+        <!-- Right Content -->
+
+        <div class="settings-content">
+
+            <div class="settings-card">
+                <div class="card-header">
+
+                    <div class="header-left">
+
+                        <h4>Select Theme</h4>
+
+                        <p>Choose your preferred application theme.</p>
+
+                    </div>
+
+                    <button class="save-btn" (click)="saveTheme()">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        Save Theme
+
+                    </button>
+
+                </div>
+
+                <div class="theme-grid">
+
+                    <div class="theme-card" [class.active]="selectedTheme=='light'" (click)="selectedTheme='light'">
+
+                        <div class="active-badge" *ngIf="selectedTheme=='light'">
+                            <i class="bi bi-check-circle-fill"></i>
+                        </div>
+
+                        <i class="bi bi-sun-fill"></i>
+
+                        <h5>Light Theme</h5>
+
+                        <p>Bright and clean interface.</p>
+
+                    </div>
+
+                    <div class="theme-card" [class.active]="selectedTheme=='dark'" (click)="selectedTheme='dark'">
+
+                        <div class="active-badge" *ngIf="selectedTheme=='dark'">
+                            <i class="bi bi-check-circle-fill"></i>
+                        </div>
+
+                        <i class="bi bi-moon-stars-fill"></i>
+
+                        <h5>Dark Theme</h5>
+
+                        <p>Comfortable for night usage.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

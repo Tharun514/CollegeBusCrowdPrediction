@@ -1,0 +1,748 @@
+/* ==========================================================
+   SETTINGS PAGE - ENTERPRISE UI
+========================================================== */
+
+:host {
+
+    display: block;
+
+    padding: 0 0 20px;
+
+}
+
+/* ==========================================================
+   PAGE HEADER
+========================================================== */
+
+.page-header {
+    margin-bottom: 16px;
+}
+
+.page-header h2 {
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 0;
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    color: #0f172a;
+
+}
+
+.page-header h2 i {
+
+    color: #4f46e5;
+
+    font-size: 28px;
+
+}
+
+.page-header p {
+
+    margin-top: 4px;
+
+    color: #64748b;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+}
+
+/* ==========================================================
+   LAYOUT
+========================================================== */
+
+.settings-container {
+
+    display: flex;
+
+    gap: 28px;
+
+    align-items: flex-start;
+
+    height: calc(100vh - 229px);
+
+}
+
+/* ==========================================================
+   LEFT MENU
+========================================================== */
+
+.settings-menu {
+
+    width: 290px;
+
+    flex-shrink: 0;
+
+    position: sticky;
+
+    top: 0;
+
+    align-self: flex-start;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    padding: 18px;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, .06);
+
+    transition: .3s;
+
+}
+
+.menu-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 16px 18px;
+
+    margin-bottom: 9px;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    color: #475569;
+
+    transition: .28s;
+
+}
+
+.menu-item:last-child {
+
+    margin-bottom: 0;
+
+}
+
+.menu-item i {
+
+    width: 24px;
+
+    text-align: center;
+
+    font-size: 21px;
+
+}
+
+.menu-item:hover {
+
+    background: #eef2ff;
+
+    color: #4f46e5;
+
+    transform: translateX(5px);
+
+}
+
+.menu-item.active {
+
+    color: #ffffff;
+
+    background:
+
+        linear-gradient(135deg, #5b5cf0, #3468f3);
+
+    box-shadow:
+
+        0 10px 25px rgba(79, 70, 229, .30);
+
+}
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.settings-content {
+
+    flex: 1;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    display: flex;
+
+}
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.settings-card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+}
+
+.settings-card:hover {
+
+    transform: translateY(-2px);
+
+}
+
+.card-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 28px;
+
+    border-bottom: 1px solid #25324a;
+
+    background: #111827;
+
+    gap: 20px;
+
+}
+
+.header-left {
+
+    flex: 1;
+
+}
+
+.header-left h4 {
+
+    margin: 0;
+
+    font-size: 26px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+    line-height: 1.2;
+
+}
+
+.header-left p {
+
+    margin-top: 6px;
+
+    margin-bottom: 0;
+
+    font-size: 14px;
+
+    color: #94a3b8;
+
+}
+
+.card-header h4 {
+
+    margin: 0;
+
+    font-size: 26px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+    line-height: 1;
+
+}
+
+.card-header p {
+
+    margin-top: 4px;
+
+    font-size: 14px;
+
+    color: #94a3b8;
+
+    line-height: 1.4;
+
+}
+
+/* ==========================================================
+   FORM
+========================================================== */
+
+.form-grid {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 24px;
+
+    padding: 24px 28px;
+
+}
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+.full-width {
+
+    grid-column: 1 / -1;
+
+}
+
+.form-group label {
+
+    margin-bottom: 10px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #334155;
+
+    letter-spacing: .3px;
+
+}
+
+.form-group input,
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 15px 18px;
+
+    border-radius: 14px;
+
+    border: 1px solid #dbe3ee;
+
+    background: #f8fafc;
+
+    color: #0f172a;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    transition: .30s;
+
+    resize: none;
+
+}
+
+.form-group textarea {
+
+    min-height: 120px;
+
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+
+    color: #94a3b8;
+
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+
+    border-color: #c7d2fe;
+
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+
+    outline: none;
+
+    background: #ffffff;
+
+    border-color: #4f46e5;
+
+    box-shadow:
+        0 0 0 5px rgba(79, 70, 229, .12);
+
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.card-footer {
+
+    flex-shrink: 0;
+
+    padding: 16px 28px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    border-top: 1px solid #edf2f7;
+
+    background: #ffffff;
+}
+
+.save-btn {
+
+    flex-shrink: 0;
+
+    border: none;
+
+    cursor: pointer;
+
+    padding: 14px 26px;
+
+    border-radius: 14px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+    background: linear-gradient(135deg, #6366f1, #2563eb);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    white-space: nowrap;
+
+}
+
+.save-btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 32px rgba(79, 70, 229, .38);
+
+}
+
+.save-btn:active {
+
+    transform: scale(.98);
+
+}
+
+/* ==========================================================
+   SMOOTH ANIMATIONS
+========================================================== */
+
+.settings-card,
+.menu-item,
+.save-btn,
+.form-group input,
+.form-group textarea {
+
+    transition: all .30s ease;
+
+}
+
+/*==========================
+       RESPONSIVE
+===========================*/
+
+@media(max-width:992px) {
+
+    .settings-container {
+
+        flex-direction: column;
+
+    }
+
+    .settings-menu {
+
+        width: 100%;
+
+    }
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .full-width {
+
+        grid-column: auto;
+
+    }
+
+}
+
+/* ==========================================================
+   ENTERPRISE DARK MODE
+========================================================== */
+
+body.dark-theme :host {
+    background: transparent;
+}
+
+/* PAGE */
+
+body.dark-theme {
+
+    background: #0b1120;
+
+}
+
+/* HEADER */
+
+body.dark-theme .page-header h2 {
+
+    color: #f8fafc;
+
+}
+
+body.dark-theme .page-header p {
+
+    color: #94a3b8;
+
+}
+
+/* LEFT MENU */
+
+body.dark-theme .settings-menu {
+
+    background: #111827;
+
+    border: 1px solid #263244;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, .45);
+
+}
+
+body.dark-theme .menu-item {
+
+    color: #cbd5e1;
+
+}
+
+body.dark-theme .menu-item:hover {
+
+    background: #1e293b;
+
+    color: #ffffff;
+
+}
+
+body.dark-theme .menu-item.active {
+
+    background:
+        linear-gradient(135deg, #6366f1, #3b82f6);
+
+    color: white;
+
+}
+
+/* CARD */
+
+body.dark-theme .settings-card {
+
+    background: #111827;
+
+    border: 1px solid #25324a;
+
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, .50);
+
+}
+
+body.dark-theme .card-header {
+
+    background: #111827;
+
+    border-bottom: 1px solid #25324a;
+
+}
+
+body.dark-theme .card-header h4 {
+
+    color: #ffffff;
+
+}
+
+body.dark-theme .card-header p {
+
+    color: #94a3b8;
+
+}
+
+/* FORM */
+
+body.dark-theme .form-group label {
+
+    color: #dbe4ef;
+
+}
+
+body.dark-theme .form-group input,
+body.dark-theme .form-group textarea {
+
+    background: #0f172a;
+
+    border: 1px solid #334155;
+
+    color: #ffffff;
+
+}
+
+body.dark-theme .form-group input::placeholder,
+body.dark-theme .form-group textarea::placeholder {
+
+    color: #64748b;
+
+}
+
+body.dark-theme .form-group input:focus,
+body.dark-theme .form-group textarea:focus {
+
+    background: #162033;
+
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, .25);
+
+}
+
+/* FOOTER */
+
+body.dark-theme .card-footer {
+
+    background: #111827;
+
+    border-top: 1px solid #25324a;
+
+}
+
+/* BUTTON */
+
+body.dark-theme .save-btn {
+
+    background:
+        linear-gradient(135deg, #6366f1, #2563eb);
+
+}
+
+body.dark-theme .save-btn:hover {
+
+    box-shadow:
+        0 15px 35px rgba(99, 102, 241, .45);
+
+}
+
+/* SCROLL */
+
+body.dark-theme ::-webkit-scrollbar {
+
+    width: 10px;
+
+}
+
+body.dark-theme ::-webkit-scrollbar-track {
+
+    background: #0b1120;
+
+}
+
+body.dark-theme ::-webkit-scrollbar-thumb {
+
+    background: #334155;
+
+    border-radius: 20px;
+
+}
+
+body.dark-theme ::-webkit-scrollbar-thumb:hover {
+
+    background: #475569;
+
+}
+
+/* GLASS EFFECT */
+
+body.dark-theme .settings-card,
+body.dark-theme .settings-menu {
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+}
+
+/* ANIMATION */
+
+body.dark-theme .settings-card:hover {
+
+    transform: translateY(-3px);
+
+}
+
+body.dark-theme .menu-item {
+
+    transition: .3s;
+
+}
+
+body.dark-theme .form-group input,
+body.dark-theme .form-group textarea {
+
+    transition: .25s;
+
+}
+
+.settings-content::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+.settings-content::-webkit-scrollbar-thumb {
+
+    background: #cbd5e1;
+
+    border-radius: 20px;
+
+}
+
+.settings-content::-webkit-scrollbar-track {
+
+    background: transparent;
+
+}

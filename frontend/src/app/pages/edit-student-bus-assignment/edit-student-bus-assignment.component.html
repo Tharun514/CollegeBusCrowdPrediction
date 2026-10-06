@@ -1,0 +1,137 @@
+<div class="container mt-4">
+
+    <div class="card p-4 shadow-sm">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="m-0">Edit Student Bus Assignment</h2>
+            <button class="btn btn-secondary btn-sm" routerLink="/student-bus-assignment">
+                <i class="bi bi-arrow-left"></i> Back to Assignments
+            </button>
+        </div>
+
+        <form [formGroup]="assignmentForm" (ngSubmit)="updateAssignment()">
+
+        <!-- Student -->
+
+        <div class="mb-3">
+
+            <label class="form-label">Student</label>
+
+            <select class="form-select" formControlName="studentId">
+
+                <option value="">-- Select Student --</option>
+
+                <option
+                    *ngFor="let student of students"
+                    [value]="student.studentId">
+
+                    {{ student.name }}
+
+                </option>
+
+            </select>
+
+        </div>
+
+        <!-- Bus -->
+
+        <div class="mb-3">
+
+            <label class="form-label">Bus</label>
+
+            <select class="form-select" formControlName="busId">
+
+                <option value="">-- Select Bus --</option>
+
+                <option
+                    *ngFor="let bus of buses"
+                    [value]="bus.busId">
+
+                    {{ bus.busNo }}
+
+                </option>
+
+            </select>
+
+        </div>
+
+        <!-- Route -->
+
+        <div class="mb-3">
+
+            <label class="form-label">Route</label>
+
+            <select class="form-select" formControlName="routeId">
+
+                <option value="">-- Select Route --</option>
+
+                <option
+                    *ngFor="let route of routes"
+                    [value]="route.routeId">
+
+                    {{ route.routeName }}
+
+                </option>
+
+            </select>
+
+        </div>
+
+        <!-- Assigned Date -->
+
+        <div class="mb-3">
+
+            <label class="form-label">Assigned Date</label>
+
+            <input
+                type="date"
+                class="form-control"
+                formControlName="assignedDate">
+
+        </div>
+
+        <!-- Status -->
+
+        <div class="mb-3">
+
+            <label class="form-label">Status</label>
+
+            <select
+                class="form-select"
+                formControlName="isActive">
+
+                <option [ngValue]="true">
+                    Active
+                </option>
+
+                <option [ngValue]="false">
+                    Inactive
+                </option>
+
+            </select>
+
+        </div>
+
+        <!-- Buttons -->
+
+        <button
+            type="submit"
+            class="btn btn-primary me-2">
+
+            Update
+
+        </button>
+
+        <button
+            type="button"
+            class="btn btn-secondary"
+            routerLink="/student-bus-assignment">
+
+            Cancel
+
+        </button>
+
+    </form>
+
+    </div>
+
+</div>

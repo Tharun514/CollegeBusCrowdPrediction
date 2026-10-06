@@ -1,0 +1,98 @@
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+
+            <h3 class="m-0">Add Attendance</h3>
+            <button class="btn btn-secondary btn-sm" routerLink="/attendance">
+                <i class="bi bi-arrow-left"></i> Back to Attendance
+            </button>
+
+        </div>
+
+        <div class="card-body">
+
+            <form [formGroup]="attendanceForm" (ngSubmit)="saveAttendance()">
+
+                <div class="mb-3">
+
+                    <label class="form-label">Student</label>
+
+                    <select class="form-select" formControlName="studentId" (change)="onStudentChange()">
+
+                        <option value="">Select Student</option>
+
+                        <option *ngFor="let student of students" [value]="student.studentId">
+
+                            {{student.name}} ({{student.rollNo}})
+
+                        </option>
+
+                    </select>
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">Bus</label>
+
+                    <select class="form-select" formControlName="busId">
+
+                        <option value="">Select Bus</option>
+
+                        <option *ngFor="let bus of buses" [value]="bus.busId">
+
+                            {{bus.busNo}}
+
+                        </option>
+
+                    </select>
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">Scan Time</label>
+
+                    <input type="datetime-local" class="form-control" formControlName="scanTime">
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">Scan Type</label>
+
+                    <select class="form-select" formControlName="scanType">
+
+                        <option value="">Select Scan Type</option>
+
+                        <option value="BOARDING">
+                            BOARDING
+                        </option>
+
+                        <option value="ALIGHTING">
+                            ALIGHTING
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <button type="submit" class="btn btn-success me-2">
+
+                    Save Attendance
+
+                </button>
+
+                <button type="button" class="btn btn-secondary" routerLink="/attendance">
+
+                    Cancel
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

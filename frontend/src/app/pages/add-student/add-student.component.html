@@ -1,0 +1,71 @@
+<div class="container mt-4">
+
+    <div class="card shadow p-4">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="m-0">Add Student</h2>
+            <button class="btn btn-secondary btn-sm" routerLink="/students">
+                <i class="bi bi-arrow-left"></i> Back to Students
+            </button>
+        </div>
+
+        <form [formGroup]="studentForm" (ngSubmit)="saveStudent()">
+            <div class="mb-3">
+                <label>Name</label>
+                <input class="form-control" formControlName="name">
+            </div>
+
+            <div class="mb-3">
+                <label>Roll Number</label>
+                <input class="form-control" formControlName="rollNo">
+            </div>
+
+            <div class="mb-3">
+                <label>Email</label>
+                <input type="email" class="form-control" formControlName="email">
+            </div>
+
+            <div class="mb-3">
+                <label>Password</label>
+                <input type="password" class="form-control" formControlName="password">
+            </div>
+
+            <div class="mb-3">
+                <label>Department</label>
+                <input class="form-control" formControlName="department">
+            </div>
+
+            <div class="mb-3">
+                <label>Year</label>
+                <input type="number" class="form-control" formControlName="year">
+            </div>
+
+            <div class="mb-3">
+                <label>Bus Pass Number</label>
+                <input class="form-control" formControlName="busPassNumber">
+            </div>
+
+            <div class="mb-3">
+                <label>Route ID</label>
+                <input type="number" class="form-control" formControlName="routeId">
+            </div>
+
+            <div class="mb-3">
+                <label>Bus ID</label>
+                <input type="number" class="form-control" formControlName="busId">
+            </div>
+
+            <div class="mb-3">
+                <label>Photo URL</label>
+                <input class="form-control" formControlName="photoUrl">
+            </div>
+
+            <button type="button" class="btn btn-success" (click)="saveStudent()">
+                Save Student
+            </button>
+
+        </form>
+
+    </div>
+
+</div>

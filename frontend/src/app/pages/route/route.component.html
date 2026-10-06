@@ -1,0 +1,141 @@
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="m-0 d-flex align-items-center"><i class="bi bi-signpost-split-fill"></i> Routes Management</h2>
+        <button class="btn btn-success" routerLink="/add-route">
+            <i class="bi bi-plus-circle"></i> Add Route
+        </button>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-5">
+            <div class="input-group">
+                <span class="input-group-text bg-white border-end-0">
+                    <i class="bi bi-search text-muted"></i>
+                </span>
+                <input type="text" class="form-control border-start-0 ps-0"
+                    placeholder="Search by Route Name, Code, Start or End" [(ngModel)]="searchText"
+                    (keyup)="filterRoutes()">
+            </div>
+        </div>
+        <div class="col-md-7 text-end">
+            <span class="badge bg-primary fs-6">
+                Total Routes : {{routes.length}}
+            </span>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped">
+
+        <thead class="table-dark">
+
+            <tr>
+
+                <th style="width:60px;">ID</th>
+
+                <th style="width:260px;">Route Name</th>
+
+                <th style="width:140px;">Route Code</th>
+
+                <th style="width:260px;">Start Point</th>
+
+                <th style="width:260px;">End Point</th>
+
+                <th style="width:120px;">Distance</th>
+
+                <th style="width:170px;">Expected Time</th>
+
+                <th style="width:140px;">Status</th>
+
+                <th style="width:180px;">Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let route of routes">
+
+                <td>
+
+                    {{route.routeId}}
+
+                </td>
+
+                <td>
+
+                    {{route.routeName}}
+
+                </td>
+
+                <td>
+
+                    {{route.routeCode}}
+
+                </td>
+
+                <td>
+
+                    {{route.startPoint}}
+
+                </td>
+
+                <td>
+
+                    {{route.endPoint}}
+
+                </td>
+
+                <td>
+
+                    {{route.distance}} KM
+
+                </td>
+
+                <td>
+
+                    {{route.expectedTime}} Min
+
+                </td>
+
+                <td>
+
+                    <span class="badge bg-success" *ngIf="route.isActive">
+
+                        Active
+
+                    </span>
+
+                    <span class="badge bg-danger" *ngIf="!route.isActive">
+
+                        Inactive
+
+                    </span>
+
+                </td>
+
+                <td class="action-column">
+
+                    <div class="action-buttons">
+
+                        <button class="btn btn-primary btn-sm" (click)="editRoute(route.routeId!)">
+
+                            Edit
+
+                        </button>
+
+                        <button class="btn btn-danger btn-sm" (click)="deleteRoute(route.routeId!)">
+
+                            Delete
+
+                        </button>
+
+                    </div>
+
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>

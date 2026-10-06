@@ -1,0 +1,125 @@
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h2 class="m-0 d-flex align-items-center"><i class="bi bi-geo-alt-fill"></i> Stops Management</h2>
+
+        <button class="btn btn-success" routerLink="/add-stop">
+            <i class="bi bi-plus-circle"></i> Add Stop
+        </button>
+
+    </div>
+
+    <div class="row mb-3">
+
+        <div class="col-md-5">
+
+            <div class="input-group">
+                <span class="input-group-text bg-white border-end-0">
+                    <i class="bi bi-search text-muted"></i>
+                </span>
+                <input type="text" class="form-control border-start-0 ps-0"
+                    placeholder="Search by Stop Name or Route ID" [(ngModel)]="searchText" (keyup)="searchStops()">
+            </div>
+
+        </div>
+
+        <div class="col-md-7 text-end">
+
+            <span class="badge bg-primary fs-6">
+                Total Stops : {{stops.length}}
+            </span>
+
+        </div>
+
+    </div>
+
+    <table class="table table-bordered table-hover table-striped shadow-sm">
+
+        <thead class="table-dark">
+
+            <tr>
+
+                <th>ID</th>
+                <th>Route ID</th>
+                <th>Stop Name</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Sequence</th>
+                <th>Major Stop</th>
+                <th width="220">Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let stop of stops | paginate:{ itemsPerPage:10, currentPage:p }">
+
+                <td>{{stop.stopId}}</td>
+
+                <td>{{stop.routeId}}</td>
+
+                <td>{{stop.stopName}}</td>
+
+                <td>{{stop.latitude}}</td>
+
+                <td>{{stop.longitude}}</td>
+
+                <td>{{stop.sequence}}</td>
+
+                <td>
+
+                    <span class="badge" [ngClass]="stop.isMajorStop ? 'bg-success' : 'bg-secondary'">
+
+                        {{stop.isMajorStop ? 'YES' : 'NO'}}
+
+                    </span>
+
+                </td>
+
+                <td class="action-column">
+
+                    <div class="action-buttons">
+
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/edit-stop', stop.stopId]">
+
+                            Edit
+
+                        </button>
+
+                        <button class="btn btn-danger btn-sm" (click)="deleteStop(stop.stopId!)">
+
+                            Delete
+
+                        </button>
+
+                    </div>
+
+                </td>
+
+            </tr>
+
+            <tr *ngIf="stops.length == 0">
+
+                <td colspan="8" class="text-center text-danger fw-bold">
+
+                    No Stops Found
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    <div class="d-flex justify-content-center mt-3">
+
+        <pagination-controls (pageChange)="p = $event">
+        </pagination-controls>
+
+    </div>
+
+</div>

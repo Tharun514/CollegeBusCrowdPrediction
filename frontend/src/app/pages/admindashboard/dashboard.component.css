@@ -1,0 +1,123 @@
+/* =========================================
+   PREMIUM DASHBOARD CARDS & WIDGETS
+   =========================================*/
+
+.premium-glow-card {
+  position: relative;
+  background: rgba(17, 24, 39, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  border-radius: 18px !important;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.card-bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 0 0 18px 18px;
+}
+
+/* Card Glow Types */
+.student-glow:hover {
+  border-color: rgba(99, 102, 241, 0.4) !important;
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.18), 0 5px 15px rgba(0,0,0,0.4) !important;
+  transform: translateY(-5px);
+}
+
+.driver-glow:hover {
+  border-color: rgba(16, 185, 129, 0.4) !important;
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.18), 0 5px 15px rgba(0,0,0,0.4) !important;
+  transform: translateY(-5px);
+}
+
+.bus-glow:hover {
+  border-color: rgba(245, 158, 11, 0.4) !important;
+  box-shadow: 0 12px 30px rgba(245, 158, 11, 0.18), 0 5px 15px rgba(0,0,0,0.4) !important;
+  transform: translateY(-5px);
+}
+
+.route-glow:hover {
+  border-color: rgba(14, 165, 233, 0.4) !important;
+  box-shadow: 0 12px 30px rgba(14, 165, 233, 0.18), 0 5px 15px rgba(0,0,0,0.4) !important;
+  transform: translateY(-5px);
+}
+
+.attendance-glow:hover {
+  border-color: rgba(244, 63, 94, 0.4) !important;
+  box-shadow: 0 12px 30px rgba(244, 63, 94, 0.18), 0 5px 15px rgba(0,0,0,0.4) !important;
+  transform: translateY(-5px);
+}
+
+.complaint-glow:hover {
+  border-color: rgba(139, 92, 246, 0.4) !important;
+  box-shadow: 0 12px 30px rgba(139, 92, 246, 0.18), 0 5px 15px rgba(0,0,0,0.4) !important;
+  transform: translateY(-5px);
+}
+
+/* Icon Wrappers */
+.card-icon-wrapper {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+/* Background Dimmed Accents */
+.bg-indigo-dim { background: rgba(99, 102, 241, 0.15); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.25); }
+.bg-emerald-dim { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.25); }
+.bg-amber-dim { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.25); }
+.bg-info-dim { background: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.25); }
+.bg-danger-dim { background: rgba(244, 63, 94, 0.15); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.25); }
+.bg-purple-dim { background: rgba(139, 92, 246, 0.15); color: #c084fc; border: 1px solid rgba(139, 92, 246, 0.25); }
+
+/* Color classes for bottom bars */
+.bg-indigo { background: #6366f1; }
+.bg-emerald { background: #10b981; }
+.bg-amber { background: #f59e0b; }
+.bg-info { background: #0ea5e9; }
+.bg-rose { background: #f43f5e; }
+.bg-purple { background: #8b5cf6; }
+
+.letter-spacing-1 {
+  letter-spacing: 0.08em;
+  font-size: 0.75rem !important;
+}
+
+/* Date time widget */
+.date-time-widget {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 8px 16px;
+  border-radius: 12px;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+
+/* Quick Actions Cards */
+.action-glass-card {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 18px !important;
+  transition: all 0.3s ease;
+}
+
+.action-glass-card:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(99, 102, 241, 0.2) !important;
+}
+
+.action-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin: 0 auto;
+}

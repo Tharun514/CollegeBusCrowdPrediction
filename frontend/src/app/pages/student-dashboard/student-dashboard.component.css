@@ -1,0 +1,69 @@
+/* =========================================
+   STUDENT DASHBOARD ACTION CARDS
+   =========================================*/
+
+.welcome-box {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  padding: 8px 18px;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.premium-alert {
+  background: #F0FDFA !important; /* Soft Teal background */
+  border: 1px solid rgba(13, 148, 136, 0.2) !important;
+  border-radius: 18px !important;
+  color: #334155 !important;
+  padding: 20px !important;
+}
+
+.premium-action-card {
+  background: #ffffff !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 20px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Card Icons */
+.card-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin: 0 auto;
+  background: #F0FDFA; /* Soft Teal */
+  color: #0d9488; /* Teal icon color */
+  border: 1px solid rgba(13, 148, 136, 0.15);
+  transition: all 0.25s ease;
+}
+
+/* Colors Accents on Card hover */
+.premium-action-card:hover {
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05) !important;
+  transform: translateY(-4px);
+}
+
+.premium-action-card:hover .card-icon {
+  background: #0d9488;
+  color: #ffffff;
+  border-color: #0d9488;
+}
+
+/* Unified Outline Button custom styles */
+.btn-outline-indigo {
+  color: #0d9488 !important;
+  border: 1px solid rgba(13, 148, 136, 0.3) !important;
+  background: transparent !important;
+  transition: all 0.3s ease !important;
+}
+.btn-outline-indigo:hover {
+  background: #0d9488 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.2);
+}

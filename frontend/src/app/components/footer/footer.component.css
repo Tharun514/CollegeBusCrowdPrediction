@@ -1,0 +1,54 @@
+.footer {
+
+    background: #0b0f19;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: white;
+    height: 49px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: auto;
+
+}
+
+/* =========================================================
+   ADMIN & STUDENT PORTAL OVERRIDES (LIGHT THEME)
+   ========================================================= */
+:host-context(.admin-portal) .footer,
+:host-context(.student-portal) .footer {
+
+    background: #FFFFFF !important;
+
+    border-top: 1px solid #E2E8F0 !important;
+
+    color: #64748B !important;
+
+    height: 42px !important;
+
+    font-size: 12px !important;
+
+}
+
+.container-fluid {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0 18px;
+
+    height: 100%;
+
+}
+
+.developer {
+
+    font-weight: bold;
+
+}

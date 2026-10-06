@@ -1,0 +1,99 @@
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+
+            <h3>Edit Complaint</h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <!-- Complaint Details -->
+
+            <div class="mb-3">
+
+                <label class="form-label fw-bold">
+                    Student ID
+                </label>
+
+                <input type="text" class="form-control" [value]="complaint.studentId" readonly>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label fw-bold">
+                    Complaint Title
+                </label>
+
+                <input type="text" class="form-control" [value]="complaint.title" readonly>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label fw-bold">
+                    Description
+                </label>
+
+                <textarea rows="4" class="form-control" readonly>{{complaint.description}}</textarea>
+
+            </div>
+
+            <hr>
+
+            <form [formGroup]="complaintForm" (ngSubmit)="updateComplaint()">
+
+                <!-- Status -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        Complaint Status
+
+                    </label>
+
+                    <select class="form-select" formControlName="status">
+
+                        <option value="PENDING">
+                            Pending
+                        </option>
+
+                        <option value="IN_PROGRESS">
+                            In Progress
+                        </option>
+
+                        <option value="RESOLVED">
+                            Resolved
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="mt-4">
+
+                    <button class="btn btn-success me-2" type="submit" [disabled]="complaintForm.invalid">
+
+                        Update Complaint
+
+                    </button>
+
+                    <button type="button" class="btn btn-secondary" routerLink="/complaints">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

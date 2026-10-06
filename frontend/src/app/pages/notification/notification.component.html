@@ -1,0 +1,143 @@
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h2 class="m-0 d-flex align-items-center"><i class="bi bi-bell-fill"></i> Notification Management</h2>
+
+        <button class="btn btn-success" routerLink="/add-notification">
+            <i class="bi bi-plus-circle"></i> Add Notification
+        </button>
+
+    </div>
+
+    <div class="row mb-3">
+
+        <div class="col-md-5">
+
+            <div class="input-group">
+                <span class="input-group-text bg-white border-end-0">
+                    <i class="bi bi-search text-muted"></i>
+                </span>
+                <input class="form-control border-start-0 ps-0" placeholder="Search notifications..." [(ngModel)]="searchText"
+                    (keyup)="searchNotifications()">
+            </div>
+
+        </div>
+
+        <div class="col-md-7 text-end">
+
+            <span class="badge bg-primary fs-6">
+
+                Total Notifications : {{notifications.length}}
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <table class="table table-bordered table-striped table-hover">
+
+        <thead class="table-dark">
+
+            <tr>
+
+                <th>ID</th>
+                <th>Title</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Read</th>
+                <th>Created</th>
+                <th>Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let notification of notifications | paginate:{itemsPerPage:10,currentPage:p}">
+
+                <td>{{notification.notificationId}}</td>
+
+                <td>{{notification.title}}</td>
+
+                <td>
+                    <span class="badge" [ngClass]="{
+                        'bg-info text-dark': notification.type == 'GENERAL',
+                        'bg-success': notification.type == 'ARRIVAL',
+                        'bg-danger': notification.type == 'DELAY',
+                        'bg-warning text-dark': notification.type == 'FULL',
+                        'bg-secondary': notification.type == 'ALTERNATIVE'
+                    }">
+                        {{notification.type}}
+                    </span>
+                </td>
+
+                <td>
+
+                    <span class="badge" [ngClass]="{
+
+                    'bg-warning':notification.status=='PENDING',
+
+                    'bg-primary':notification.status=='SENT',
+
+                    'bg-success':notification.status=='READ'
+
+                }">
+
+                        {{notification.status}}
+
+                    </span>
+
+                </td>
+
+                <td>
+
+                    <span class="badge" [ngClass]="{
+
+                    'bg-success':notification.isRead,
+
+                    'bg-danger':!notification.isRead
+
+                }">
+
+                        {{notification.isRead?'Yes':'No'}}
+
+                    </span>
+
+                </td>
+
+                <td>
+
+                    {{notification.createdAt | date:'dd-MM-yyyy HH:mm'}}
+
+                </td>
+
+                <td>
+
+                    <button class="btn btn-danger btn-sm" (click)="deleteNotification(notification.notificationId!)">
+
+                        <i class="bi bi-trash"></i>
+
+                        Delete
+
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    <div class="d-flex justify-content-center">
+
+        <pagination-controls (pageChange)="p=$event">
+
+        </pagination-controls>
+
+    </div>
+
+</div>

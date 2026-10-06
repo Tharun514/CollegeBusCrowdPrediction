@@ -1,0 +1,45 @@
+/* ===========================
+   ACTION COLUMN
+=========================== */
+
+.action-column {
+
+    width: 190px;
+
+    min-width: 190px;
+
+    text-align: center;
+
+}
+
+/* ===========================
+   ACTION BUTTONS
+=========================== */
+
+.action-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: nowrap;
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.action-buttons .btn {
+
+    min-width: 72px;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
+
+}

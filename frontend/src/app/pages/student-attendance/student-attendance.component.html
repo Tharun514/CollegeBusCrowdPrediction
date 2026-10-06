@@ -1,0 +1,71 @@
+<div class="container-fluid py-4 animate-fade-in">
+
+    <div class="card shadow-sm attendance-card">
+
+        <div class="card-header d-flex align-items-center gap-2">
+            <i class="bi bi-calendar-check-fill header-icon"></i>
+            <h4>My Attendance History</h4>
+        </div>
+
+        <div class="card-body p-0">
+
+            <div class="table-responsive">
+
+                <table class="table custom-attendance-table m-0">
+
+                    <thead>
+
+                        <tr>
+
+                            <th class="text-center" style="width: 80px;">#</th>
+                            <th>Scan Date & Time</th>
+                            <th class="text-center" style="width: 180px;">Scan Type</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr *ngFor="let a of attendanceList; let i=index">
+
+                            <td class="text-center text-secondary-bold">{{i+1}}</td>
+
+                            <td class="text-dark-bold">
+                                <i class="bi bi-clock me-2 text-slate"></i>
+                                {{a.scanTime | date:'dd-MM-yyyy hh:mm a'}}
+                            </td>
+
+                            <td class="text-center">
+                                <span class="scan-type-badge" [ngClass]="{
+                                    'badge-in': a.scanType.toUpperCase() === 'IN' || a.scanType.toUpperCase() === 'CHECK-IN',
+                                    'badge-out': a.scanType.toUpperCase() === 'OUT' || a.scanType.toUpperCase() === 'CHECK-OUT'
+                                }">
+                                    <i class="bi" [ngClass]="{
+                                        'bi-box-arrow-in-right': a.scanType.toUpperCase() === 'IN' || a.scanType.toUpperCase() === 'CHECK-IN',
+                                        'bi-box-arrow-left': a.scanType.toUpperCase() === 'OUT' || a.scanType.toUpperCase() === 'CHECK-OUT'
+                                    }"></i>
+                                    {{a.scanType}}
+                                </span>
+                            </td>
+
+                        </tr>
+
+                        <tr *ngIf="!attendanceList || attendanceList.length === 0">
+                            <td colspan="3" class="text-center py-4 text-muted">
+                                <i class="bi bi-calendar-x d-block fs-2 mb-2 text-slate"></i>
+                                No attendance records found
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

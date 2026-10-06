@@ -1,0 +1,77 @@
+/* ===============================
+   ACTION BUTTONS
+=============================== */
+
+.action-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+    align-items:center;
+
+}
+
+/* EDIT */
+
+.btn-edit{
+
+    background:linear-gradient(135deg,#5865F2,#3B82F6);
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:8px 18px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.3s ease;
+
+    box-shadow:0 0 18px rgba(88,101,242,.35);
+
+}
+
+.btn-edit:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 0 24px rgba(88,101,242,.60);
+
+}
+
+/* DELETE */
+
+.btn-delete{
+
+    background:linear-gradient(135deg,#ff4d4f,#ff1f1f);
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:8px 18px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.3s ease;
+
+    box-shadow:0 0 18px rgba(255,59,59,.35);
+
+}
+
+.btn-delete:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 0 24px rgba(255,59,59,.60);
+
+}

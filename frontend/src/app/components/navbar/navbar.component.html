@@ -1,0 +1,183 @@
+<nav class="top-nav">
+
+    <!-- Left: Hamburger Toggle & Brand Logo -->
+    <div class="nav-left">
+
+        <button class="menu-btn" (click)="toggleSidebar()" aria-label="Toggle Navigation Sidebar">
+            <span class="menu-line line-1"></span>
+            <span class="menu-line line-2"></span>
+            <span class="menu-line line-3"></span>
+        </button>
+
+        <div class="brand" routerLink="/dashboard">
+
+            <div class="brand-logo">
+                <i class="bi bi-bus-front-fill"></i>
+            </div>
+
+            <div class="brand-text">
+                <h4>BusCrowd</h4>
+                <span>Admin Portal</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Center: Search Box -->
+    <div class="nav-center">
+
+        <div class="search-container">
+
+            <div class="search-input">
+
+                <i class="bi bi-search search-icon"></i>
+
+                <input type="text" [(ngModel)]="searchQuery" (input)="onSearchChange()" (keyup.enter)="performSearch()"
+                    placeholder="Search students, buses, routes, drivers..." />
+
+                <button *ngIf="searchQuery" class="clear-btn"
+                    (click)="searchQuery='';searchResults=[];showSearchResults=false">
+
+                    <i class="bi bi-x-lg"></i>
+
+                </button>
+
+            </div>
+
+            <div class="search-dropdown" *ngIf="showSearchResults">
+
+                <div class="search-card" *ngFor="let result of searchResults" (click)="selectResult(result)">
+
+                    <div class="search-avatar">
+
+                        <i [class]="result.icon"></i>
+
+                    </div>
+
+                    <div class="search-info">
+
+                        <div class="search-name">
+
+                            {{result.title}}
+
+                        </div>
+
+                        <div class="search-desc">
+
+                            {{result.subtitle}}
+
+                        </div>
+
+                    </div>
+
+                    <span class="search-badge">
+
+                        {{result.type}}
+
+                    </span>
+
+                </div>
+
+                <div class="empty-search" *ngIf="searchResults.length==0">
+
+                    <i class="bi bi-search"></i>
+
+                    No matching records found
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Right: Navigation Links, Notification, Welcome User, Logout -->
+    <div class="nav-right">
+
+        <!-- Main Navigation Links -->
+        <div class="nav-links">
+            <a class="nav-link" routerLink="/dashboard" routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }">
+                <i class="bi bi-grid-1x2-fill"></i>
+                <span>Dashboard</span>
+            </a>
+            <a class="nav-link" routerLink="/students" routerLinkActive="active">
+                <i class="bi bi-people-fill"></i>
+                <span>Students</span>
+            </a>
+            <a class="nav-link" routerLink="/drivers" routerLinkActive="active">
+                <i class="bi bi-person-badge-fill"></i>
+                <span>Drivers</span>
+            </a>
+            <a class="nav-link" routerLink="/buses" routerLinkActive="active">
+                <i class="bi bi-bus-front-fill"></i>
+                <span>Buses</span>
+            </a>
+            <a class="nav-link" routerLink="/routes" routerLinkActive="active">
+                <i class="bi bi-sign-turn-right-fill"></i>
+                <span>Routes</span>
+            </a>
+        </div>
+
+        <!-- Notification Trigger -->
+        <div class="notification-wrapper" (click)="stopPropagation($event)">
+
+            <button class="icon-btn" (click)="toggleNotifications()">
+                <i class="bi bi-bell"></i>
+                <span class="badge" *ngIf="unreadCount>0">
+                    {{unreadCount}}
+                </span>
+            </button>
+
+            <!-- Notifications Dropdown -->
+            <div class="notification-dropdown" *ngIf="showNotifications">
+
+                <div class="dropdown-header">
+                    <h6>Notifications</h6>
+                    <button class="mark-read" (click)="markAllAsRead()">
+                        Mark all read
+                    </button>
+                </div>
+
+                <div class="dropdown-body">
+                    <div class="notification-item" *ngFor="let notification of notifications">
+                        <div class="notification-title">
+                            {{notification.title}}
+                        </div>
+                        <div class="notification-message">
+                            {{notification.message}}
+                        </div>
+                        <small>
+                            {{notification.time}}
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Profile details & Welcome Admin -->
+        <div class="profile" routerLink="/profile">
+
+            <div class="profile-details">
+                <small class="welcome-label">Welcome, Admin</small>
+                <strong class="admin-name">{{username || 'Administrator'}}</strong>
+            </div>
+
+            <div class="avatar">
+                {{username ? username.charAt(0).toUpperCase() : 'A'}}
+            </div>
+
+        </div>
+
+        <!-- Logout Action Button -->
+        <button class="logout-btn" (click)="logout()" title="Logout of Admin Panel">
+            <i class="bi bi-box-arrow-right"></i>
+        </button>
+
+    </div>
+
+</nav>

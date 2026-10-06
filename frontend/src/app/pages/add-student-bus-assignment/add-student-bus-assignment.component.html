@@ -1,0 +1,179 @@
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h4 class="mb-0">
+                <i class="fas fa-bus"></i>
+                Add Student Bus Assignment
+            </h4>
+            <button class="btn btn-secondary btn-sm" routerLink="/student-bus-assignment">
+                <i class="bi bi-arrow-left"></i> Back to Assignments
+            </button>
+        </div>
+
+        <div class="card-body">
+
+            <form [formGroup]="assignmentForm" (ngSubmit)="saveAssignment()">
+
+                <!-- Student -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Student <span class="text-danger">*</span>
+                    </label>
+
+                    <select class="form-select" formControlName="studentId">
+
+                        <option value="">-- Select Student --</option>
+
+                        <option *ngFor="let student of students" [value]="student.studentId">
+
+                            {{student.name}} ({{student.rollNo}})
+
+                        </option>
+
+                    </select>
+
+                    <div class="text-danger mt-1" *ngIf="assignmentForm.get('studentId')?.touched &&
+                               assignmentForm.get('studentId')?.invalid">
+
+                        Student is required.
+
+                    </div>
+
+                </div>
+
+                <!-- Bus -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Bus <span class="text-danger">*</span>
+                    </label>
+
+                    <select class="form-select" formControlName="busId" (change)="onBusChange()">
+
+                        <option value="">-- Select Bus --</option>
+
+                        <option *ngFor="let bus of buses" [value]="bus.busId">
+
+                            {{bus.busNo}} ({{bus.registrationNumber}})
+
+                        </option>
+
+                    </select>
+
+                    <div class="text-danger mt-1" *ngIf="assignmentForm.get('busId')?.touched &&
+                               assignmentForm.get('busId')?.invalid">
+
+                        Bus is required.
+
+                    </div>
+
+                </div>
+
+                <!-- Route -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Route
+                    </label>
+
+                    <select class="form-select bg-light" formControlName="routeId">
+
+                        <option value="">-- Auto Selected --</option>
+
+                        <option *ngFor="let route of routes" [value]="route.routeId">
+
+                            {{route.routeName}}
+                            ({{route.startPoint}} → {{route.endPoint}})
+
+                        </option>
+
+                    </select>
+
+                    <small class="text-muted">
+
+                        Route will be selected automatically when you choose a Bus.
+
+                    </small>
+
+                </div>
+
+                <!-- Assigned Date -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Assigned Date <span class="text-danger">*</span>
+                    </label>
+
+                    <input type="date" class="form-control" formControlName="assignedDate">
+
+                    <div class="text-danger mt-1" *ngIf="assignmentForm.get('assignedDate')?.touched &&
+                               assignmentForm.get('assignedDate')?.invalid">
+
+                        Assigned Date is required.
+
+                    </div>
+
+                </div>
+
+                <!-- Status -->
+
+                <div class="mb-4">
+
+                    <label class="form-label">
+
+                        Status
+
+                    </label>
+
+                    <select class="form-select" formControlName="isActive">
+
+                        <option [ngValue]="true">
+
+                            Active
+
+                        </option>
+
+                        <option [ngValue]="false">
+
+                            Inactive
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- Buttons -->
+
+                <div class="d-flex gap-2">
+
+                    <button type="submit" class="btn btn-success">
+
+                        <i class="fas fa-save"></i>
+
+                        Save Assignment
+
+                    </button>
+
+                    <button type="button" class="btn btn-secondary" routerLink="/student-bus-assignment">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

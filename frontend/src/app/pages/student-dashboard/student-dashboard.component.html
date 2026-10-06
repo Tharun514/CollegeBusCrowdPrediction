@@ -1,0 +1,125 @@
+<div class="container-fluid py-4 animate-fade-in">
+
+    <!-- Header Section -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
+        <div>
+            <h2 class="mb-1 fw-bold text-glow">🎓 Student Command Center</h2>
+            <p class="text-muted m-0">Access schedules, bus tracking, and attendance logs</p>
+        </div>
+        <div class="welcome-box mt-3 mt-md-0 d-flex align-items-center">
+            <span class="user-welcome-icon float-bus me-2">👋</span>
+            <span class="fw-bold">Welcome back, {{studentName}}</span>
+        </div>
+    </div>
+
+    <!-- Info Welcome Message banner -->
+    <div class="alert premium-alert d-flex align-items-center" role="alert">
+        <i class="bi bi-info-circle-fill me-3 fs-4" style="color: #0d9488 !important;"></i>
+        <div>
+            <h5 class="alert-heading fw-bold mb-1" style="color: #0d9488 !important;">Transit Optimization</h5>
+            <p class="mb-0 text-muted">Use the live bus tracking dashboard to see real-time crowd predictions and avoid delays.</p>
+        </div>
+    </div>
+
+    <!-- Student Cards Grid -->
+    <div class="row mt-4">
+ 
+         <!-- My Profile -->
+         <div class="col-lg-4 col-md-6 mb-4">
+             <div class="card premium-action-card cursor-pointer" routerLink="/student-profile">
+                 <div class="card-body text-center py-4">
+                     <div class="card-icon mb-3">
+                         <i class="bi bi-person-fill-gear"></i>
+                     </div>
+                     <h5 class="fw-bold mb-2">My Profile</h5>
+                     <p class="text-muted small mb-3">Manage your student details and upload photo</p>
+                     <button class="btn btn-outline-indigo btn-sm px-4">
+                         View Portal <i class="bi bi-arrow-right-short ms-1"></i>
+                     </button>
+                 </div>
+             </div>
+         </div>
+ 
+         <!-- My Bus -->
+         <div class="col-lg-4 col-md-6 mb-4">
+             <div class="card premium-action-card cursor-pointer" routerLink="/student-bus">
+                 <div class="card-body text-center py-4">
+                     <div class="card-icon mb-3">
+                         <i class="bi bi-bus-front-fill"></i>
+                     </div>
+                     <h5 class="fw-bold mb-2">My Bus</h5>
+                     <p class="text-muted small mb-3">Check assigned bus registration, speed & driver details</p>
+                     <button class="btn btn-outline-indigo btn-sm px-4">
+                         View Portal <i class="bi bi-arrow-right-short ms-1"></i>
+                     </button>
+                 </div>
+             </div>
+         </div>
+ 
+         <!-- My Route -->
+         <div class="col-lg-4 col-md-6 mb-4">
+             <div class="card premium-action-card cursor-pointer" routerLink="/student-route">
+                 <div class="card-body text-center py-4">
+                     <div class="card-icon mb-3">
+                         <i class="bi bi-sign-turn-right-fill"></i>
+                     </div>
+                     <h5 class="fw-bold mb-2">My Route</h5>
+                     <p class="text-muted small mb-3">Inspect bus stops, arrival timings & map tracks</p>
+                     <button class="btn btn-outline-indigo btn-sm px-4">
+                         View Portal <i class="bi bi-arrow-right-short ms-1"></i>
+                     </button>
+                 </div>
+             </div>
+         </div>
+ 
+         <!-- Attendance Logs -->
+         <div class="col-lg-4 col-md-6 mb-4">
+             <div class="card premium-action-card cursor-pointer" routerLink="/student-attendance">
+                 <div class="card-body text-center py-4">
+                     <div class="card-icon mb-3">
+                         <i class="bi bi-calendar-check-fill"></i>
+                     </div>
+                     <h5 class="fw-bold mb-2">Attendance</h5>
+                     <p class="text-muted small mb-3">Review your history and check attendance percentages</p>
+                     <button class="btn btn-outline-indigo btn-sm px-4">
+                         View Portal <i class="bi bi-arrow-right-short ms-1"></i>
+                     </button>
+                 </div>
+             </div>
+         </div>
+ 
+         <!-- Notifications -->
+         <div class="col-lg-4 col-md-6 mb-4">
+             <div class="card premium-action-card cursor-pointer" routerLink="/student-notifications">
+                 <div class="card-body text-center py-4">
+                     <div class="card-icon mb-3">
+                         <i class="bi bi-bell-fill"></i>
+                     </div>
+                     <h5 class="fw-bold mb-2">Notifications</h5>
+                     <p class="text-muted small mb-3">View notifications and announcements from management</p>
+                     <button class="btn btn-outline-indigo btn-sm px-4">
+                         View Portal <i class="bi bi-arrow-right-short ms-1"></i>
+                     </button>
+                 </div>
+             </div>
+         </div>
+ 
+         <!-- Raise Complaint -->
+         <div class="col-lg-4 col-md-6 mb-4">
+             <div class="card premium-action-card cursor-pointer" routerLink="/student-complaint">
+                 <div class="card-body text-center py-4">
+                     <div class="card-icon mb-3">
+                         <i class="bi bi-chat-left-text-fill"></i>
+                     </div>
+                     <h5 class="fw-bold mb-2">Raise Complaint</h5>
+                     <p class="text-muted small mb-3">File complaints regarding service speed, driver behaviour or crowd</p>
+                     <button class="btn btn-outline-indigo btn-sm px-4">
+                         View Portal <i class="bi bi-arrow-right-short ms-1"></i>
+                     </button>
+                 </div>
+             </div>
+         </div>
+
+    </div>
+
+</div>

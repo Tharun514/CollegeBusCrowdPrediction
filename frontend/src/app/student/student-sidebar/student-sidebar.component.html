@@ -1,0 +1,65 @@
+<div class="sidebar" [class.collapsed]="collapsed">
+
+    <!-- Sidebar Header with Close button (visible when expanded) -->
+    <div class="sidebar-header" *ngIf="!collapsed">
+        <div class="sidebar-brand">
+            <i class="bi bi-mortarboard-fill"></i>
+            <span>Student Hub</span>
+        </div>
+        <button class="close-btn" (click)="toggleSidebar()" title="Close Menu">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+
+    <div class="sidebar-menu">
+
+        <ng-container *ngFor="let item of menu">
+
+            <!-- Section -->
+
+            <div class="menu-section" *ngIf="item.section">
+
+                <span *ngIf="!collapsed">
+                    {{ item.section }}
+                </span>
+
+            </div>
+
+            <!-- Menu -->
+
+            <a class="menu-link" [routerLink]="item.route" routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }" [title]="collapsed ? item.title : ''">
+
+                <div class="menu-icon">
+
+                    <i [class]="item.icon"></i>
+
+                </div>
+
+                <div class="menu-label">
+
+                    {{ item.title }}
+
+                </div>
+
+            </a>
+
+        </ng-container>
+
+    </div>
+
+    <div class="sidebar-footer">
+
+        <div class="version">
+
+            <i class="bi bi-patch-check-fill"></i>
+
+            <span *ngIf="!collapsed">
+                Version 3.0
+            </span>
+
+        </div>
+
+    </div>
+
+</div>

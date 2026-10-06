@@ -1,0 +1,112 @@
+<div class="container mt-4">
+
+    <div class="card p-4 shadow-sm">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="m-0">Add Route</h2>
+            <button class="btn btn-secondary btn-sm" routerLink="/routes">
+                <i class="bi bi-arrow-left"></i> Back to Routes
+            </button>
+        </div>
+
+        <form [formGroup]="routeForm">
+
+        <div class="row">
+
+            <div class="col-md-6 mb-3">
+
+                <label>Route Name</label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    formControlName="routeName">
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+
+                <label>Route Code</label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    formControlName="routeCode">
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+
+                <label>Start Point</label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    formControlName="startPoint">
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+
+                <label>End Point</label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    formControlName="endPoint">
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+
+                <label>Distance (KM)</label>
+
+                <input
+                    type="number"
+                    class="form-control"
+                    formControlName="distance">
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+
+                <label>Expected Time (Minutes)</label>
+
+                <input
+                    type="number"
+                    class="form-control"
+                    formControlName="expectedTime">
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+
+                <label>Status</label>
+
+                <select
+                    class="form-control"
+                    formControlName="isActive">
+
+                    <option [ngValue]="true">Active</option>
+
+                    <option [ngValue]="false">Inactive</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <button
+            type="button"
+            class="btn btn-success"
+            (click)="saveRoute()">
+
+            Save Route
+
+        </button>
+
+    </form>
+
+    </div>
+
+</div>

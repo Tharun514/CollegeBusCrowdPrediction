@@ -1,0 +1,9 @@
+"assets": [
+    "src/favicon.ico",
+    "src/assets",
+    {
+        "glob": "**/*",
+        "input": "node_modules/leaflet/dist/images",
+        "output": "assets/leaflet/"
+    }
+]

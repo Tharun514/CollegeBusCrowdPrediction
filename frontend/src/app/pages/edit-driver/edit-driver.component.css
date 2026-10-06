@@ -1,0 +1,11 @@
+.card {
+    border-radius: 10px;
+}
+
+.card-header {
+    font-weight: bold;
+}
+
+.text-danger {
+    font-size: 13px;
+}

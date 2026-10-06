@@ -1,0 +1,120 @@
+<div class="container-fluid py-4 animate-fade-in">
+
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
+        <div>
+            <h2 class="mb-1 fw-bold text-glow text-white">📊 System Dashboard</h2>
+            <p class="text-muted m-0">Real-time statistics & administrative commands</p>
+        </div>
+        <div class="date-time-widget mt-3 mt-md-0">
+            <i class="bi bi-clock-fill me-2 text-indigo"></i>
+            <span class="fw-bold">Active Session</span>
+        </div>
+    </div>
+
+    <!-- Dashboard Grid Cards -->
+    <div class="row g-4">
+
+        <div class="col-xl-4 col-md-6">
+            <app-stat-card title="Students" [value]="dashboard.totalStudents" icon="bi bi-people-fill" color="blue"
+                subtitle="Registered Students">
+            </app-stat-card>
+        </div>
+
+        <div class="col-xl-4 col-md-6">
+            <app-stat-card title="Drivers" [value]="dashboard.totalDrivers" icon="bi bi-person-badge-fill" color="green"
+                subtitle="Available Drivers">
+            </app-stat-card>
+        </div>
+
+        <div class="col-xl-4 col-md-6">
+            <app-stat-card title="Buses" [value]="dashboard.totalBuses" icon="bi bi-bus-front-fill" color="orange"
+                subtitle="Registered Buses">
+            </app-stat-card>
+        </div>
+
+        <div class="col-xl-4 col-md-6">
+            <app-stat-card title="Routes" [value]="dashboard.totalRoutes" icon="bi bi-sign-turn-right-fill" color="cyan"
+                subtitle="Available Routes">
+            </app-stat-card>
+        </div>
+
+        <div class="col-xl-4 col-md-6">
+            <app-stat-card title="Attendance" [value]="dashboard.totalAttendance" icon="bi bi-calendar-check-fill"
+                color="red" subtitle="Attendance Records">
+            </app-stat-card>
+        </div>
+
+        <div class="col-xl-4 col-md-6">
+            <app-stat-card title="Complaints" [value]="dashboard.totalComplaints" icon="bi bi-chat-left-text-fill"
+                color="purple" subtitle="Received Complaints">
+            </app-stat-card>
+        </div>
+
+    </div>
+    <!-- Quick Actions Section -->
+    <div class="quick-actions-panel mt-4">
+        <h3 class="mb-4 fw-bold text-white"><i class="bi bi-rocket-takeoff-fill text-indigo me-2"></i>Quick Commands
+        </h3>
+
+        <div class="row">
+
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card action-glass-card shadow-sm text-center">
+                    <div class="card-body py-4">
+                        <div class="action-icon bg-indigo-dim mb-3">
+                            <i class="bi bi-person-plus-fill"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3 text-white">Add Student</h5>
+                        <button class="btn btn-primary btn-sm px-4 w-100" routerLink="/add-student">
+                            Execute <i class="bi bi-chevron-right ms-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card action-glass-card shadow-sm text-center">
+                    <div class="card-body py-4">
+                        <div class="action-icon bg-emerald-dim mb-3">
+                            <i class="bi bi-person-badge-fill"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3 text-white">Add Driver</h5>
+                        <button class="btn btn-success btn-sm px-4 w-100" routerLink="/add-driver">
+                            Execute <i class="bi bi-chevron-right ms-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card action-glass-card shadow-sm text-center">
+                    <div class="card-body py-4">
+                        <div class="action-icon bg-amber-dim mb-3">
+                            <i class="bi bi-bus-front-fill"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3 text-white">Add Bus</h5>
+                        <button class="btn btn-warning btn-sm px-4 w-100 text-dark" routerLink="/add-bus">
+                            Execute <i class="bi bi-chevron-right ms-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card action-glass-card shadow-sm text-center">
+                    <div class="card-body py-4">
+                        <div class="action-icon bg-info-dim mb-3">
+                            <i class="bi bi-sign-turn-right-fill"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3 text-white">Add Route</h5>
+                        <button class="btn btn-info btn-sm px-4 w-100" routerLink="/add-route">
+                            Execute <i class="bi bi-chevron-right ms-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

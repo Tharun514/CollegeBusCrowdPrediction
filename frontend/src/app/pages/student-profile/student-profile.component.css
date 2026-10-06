@@ -1,0 +1,546 @@
+/*=========================================================
+  STUDENT PROFILE
+=========================================================*/
+
+:host {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-page {
+
+    display: flex;
+
+    flex-direction: column;
+
+    height: 100%;
+
+    overflow: hidden;
+
+}
+
+/*=========================================================
+HEADER
+=========================================================*/
+
+.page-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 24px;
+
+    flex-shrink: 0;
+
+}
+
+.page-title h2 {
+
+    margin: 0;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: #0f172a;
+
+}
+
+.page-title p {
+
+    margin-top: 6px;
+
+    color: #64748b;
+
+}
+
+.save-btn {
+
+    min-width: 180px;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #0d9488;
+
+    color: #fff;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+.save-btn:hover {
+
+    background: #0f766e;
+
+}
+
+/*=========================================================
+GRID
+=========================================================*/
+
+.profile-grid {
+
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns: 320px 1fr;
+
+    gap: 24px;
+
+    min-height: 0;
+
+    overflow: hidden;
+
+}
+
+/*=========================================================
+LEFT PANEL
+=========================================================*/
+
+.profile-sidebar {
+
+    height: 100%;
+
+    overflow: visible;
+
+    align-self: start;
+
+}
+
+.profile-card{
+
+    position:sticky;
+
+    top:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+
+    height:fit-content;
+
+}
+
+.profile-image {
+
+    position: relative;
+
+    width: 180px;
+
+    height: 180px;
+
+    margin-bottom: 22px;
+
+    cursor: pointer;
+
+}
+
+.profile-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid #0d9488;
+
+}
+
+.camera-btn {
+
+    position: absolute;
+
+    right: 0;
+
+    bottom: 10px;
+
+    width: 52px;
+
+    height: 52px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #0d9488;
+
+    color: #fff;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 20px;
+
+}
+
+.profile-card h3 {
+
+    margin: 10px 0 5px;
+
+    font-size: 28px;
+
+    text-align: center;
+
+}
+
+.student-id {
+
+    color: #64748b;
+
+    margin-bottom: 18px;
+
+}
+
+.student-badges {
+
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    margin-bottom: 26px;
+
+}
+
+.profile-buttons {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+.edit-btn,
+.cancel-btn {
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-weight: 600;
+
+}
+
+.edit-btn {
+
+    background: #0d9488;
+
+    color: #fff;
+
+}
+
+.cancel-btn {
+
+    background: #f8fafc;
+
+    border: 1px solid #cbd5e1;
+
+}
+
+/*=========================================================
+RIGHT PANEL
+=========================================================*/
+
+.profile-content {
+
+    height: 100%;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    padding-right: 10px;
+
+    min-height: 0;
+
+}
+
+.profile-content::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+.profile-content::-webkit-scrollbar-thumb {
+
+    background: #cbd5e1;
+
+    border-radius: 20px;
+
+}
+
+.profile-content::-webkit-scrollbar-track {
+
+    background: transparent;
+
+}
+
+.details-section {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+
+    padding-bottom: 20px;
+
+}
+
+.settings-card {
+
+    background: #fff;
+
+    border-radius: 22px;
+
+    padding: 28px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .06);
+
+}
+
+.settings-card h4 {
+
+    margin: 0 0 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    color: #0f172a;
+
+}
+
+.settings-card h4 i {
+
+    color: #0d9488;
+
+    font-size: 24px;
+
+}
+
+/*=========================================================
+FORM
+=========================================================*/
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+.form-group label {
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #475569;
+
+}
+
+.form-group input,
+.form-group select {
+
+    width: 100%;
+
+    height: 50px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 12px;
+
+    padding: 0 16px;
+
+    font-size: 15px;
+
+    transition: .25s;
+
+    background: #fff;
+
+}
+
+.form-group input:focus,
+.form-group select:focus {
+
+    outline: none;
+
+    border-color: #0d9488;
+
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, .15);
+
+}
+
+.form-group input[readonly] {
+
+    background: #f8fafc;
+
+}
+
+.form-group select:disabled {
+
+    background: #f8fafc;
+
+}
+
+/*=========================================================
+RESPONSIVE
+=========================================================*/
+
+@media (max-width:1200px) {
+
+    .profile-page {
+
+        height: auto;
+
+        overflow: visible;
+
+    }
+
+    .profile-grid {
+
+        grid-template-columns: 1fr;
+
+        overflow: visible;
+
+    }
+
+    .profile-sidebar {
+
+        height: auto;
+
+    }
+
+    .profile-card {
+
+        position: relative;
+
+        top: auto;
+
+    }
+
+    .profile-content {
+
+        height: auto;
+
+        overflow: visible;
+
+        padding-right: 0;
+
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .page-title {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 16px;
+
+    }
+
+    .save-btn {
+
+        width: 100%;
+
+    }
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .profile-card {
+
+        padding: 22px;
+
+    }
+
+    .settings-card {
+
+        padding: 22px;
+
+    }
+
+}

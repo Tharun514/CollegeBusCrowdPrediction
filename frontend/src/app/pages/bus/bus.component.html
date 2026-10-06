@@ -1,0 +1,105 @@
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="m-0 d-flex align-items-center"><i class="bi bi-bus-front-fill"></i> Buses Management</h2>
+        <button class="btn btn-success" routerLink="/add-bus">
+            <i class="bi bi-plus-circle"></i> Add Bus
+        </button>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-5">
+            <div class="input-group">
+                <span class="input-group-text bg-white border-end-0">
+                    <i class="bi bi-search text-muted"></i>
+                </span>
+                <input type="text" class="form-control border-start-0 ps-0"
+                    placeholder="Search by Bus No, Reg No, Status or Stops" [(ngModel)]="searchText"
+                    (keyup)="filterBuses()">
+            </div>
+        </div>
+        <div class="col-md-7 text-end">
+            <span class="badge bg-primary fs-6">
+                Total Buses : {{buses.length}}
+            </span>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped table-hover">
+
+        <thead class="table-dark">
+
+            <tr>
+
+                <th>ID</th>
+                <th>Bus No</th>
+                <th>Registration No</th>
+                <th>Capacity</th>
+                <th>Status</th>
+                <th>Driver ID</th>
+                <th>Route ID</th>
+                <th>Current Stop</th>
+                <th>Next Stop</th>
+                <th>Speed</th>
+                <th>Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let bus of buses">
+
+                <td>{{bus.busId}}</td>
+
+                <td>{{bus.busNo}}</td>
+
+                <td>{{bus.registrationNumber}}</td>
+
+                <td>{{bus.capacity}}</td>
+
+                <td>
+                    <span class="badge"
+                        [ngClass]="bus.status === 'Active' ? 'bg-success' : (bus.status === 'Maintenance' ? 'bg-warning' : 'bg-danger')">
+                        {{bus.status}}
+                    </span>
+                </td>
+
+                <td>{{bus.driverId}}</td>
+
+                <td>{{bus.routeId}}</td>
+
+                <td>{{bus.currentStop}}</td>
+
+                <td>{{bus.nextStop}}</td>
+
+                <td>{{bus.speed}}</td>
+
+                <td class="action-column">
+
+                    <div class="action-buttons">
+
+                        <button class="btn btn-primary btn-sm" (click)="editBus(bus.busId!)">
+
+                            Edit
+
+                        </button>
+
+                        <button class="btn btn-danger btn-sm" (click)="deleteBus(bus.busId!)">
+
+                            Delete
+
+                        </button>
+
+                    </div>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>

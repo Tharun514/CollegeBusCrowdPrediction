@@ -1,0 +1,111 @@
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+
+            <h4 class="m-0">Edit Driver</h4>
+            <button class="btn btn-secondary btn-sm" routerLink="/drivers">
+                <i class="bi bi-arrow-left"></i> Back to Drivers
+            </button>
+
+        </div>
+
+        <div class="card-body">
+
+            <form [formGroup]="driverForm" (ngSubmit)="updateDriver()">
+
+                <!-- Name -->
+                <div class="mb-3">
+
+                    <label class="form-label">Name</label>
+
+                    <input type="text" class="form-control" formControlName="name">
+
+                    <small class="text-danger" *ngIf="f['name'].touched && f['name'].errors?.['required']">
+
+                        Driver Name is required
+
+                    </small>
+
+                    <small class="text-danger" *ngIf="f['name'].touched && f['name'].errors?.['minlength']">
+
+                        Minimum 3 characters required
+
+                    </small>
+
+                </div>
+
+                <!-- Phone -->
+                <div class="mb-3">
+
+                    <label class="form-label">Phone</label>
+
+                    <input type="text" class="form-control" formControlName="phone">
+
+                    <small class="text-danger" *ngIf="f['phone'].touched && f['phone'].errors?.['required']">
+
+                        Phone Number is required
+
+                    </small>
+
+                    <small class="text-danger" *ngIf="f['phone'].touched && f['phone'].errors?.['pattern']">
+
+                        Enter valid 10 digit phone number
+
+                    </small>
+
+                </div>
+
+                <!-- License -->
+                <div class="mb-3">
+
+                    <label class="form-label">License</label>
+
+                    <input type="text" class="form-control" formControlName="license">
+
+                    <small class="text-danger" *ngIf="f['license'].touched && f['license'].errors?.['required']">
+
+                        License Number is required
+
+                    </small>
+
+                </div>
+
+                <!-- Status -->
+                <div class="mb-3">
+
+                    <label class="form-label">Status</label>
+
+                    <select class="form-select" formControlName="status">
+
+                        <option value="">Select Status</option>
+
+                        <option value="AVAILABLE">AVAILABLE</option>
+
+                        <option value="OFFLINE">OFFLINE</option>
+
+                        <option value="ON_ROUTE">ON_ROUTE</option>
+
+                    </select>
+                    <small class="text-danger" *ngIf="f['status'].touched && f['status'].errors?.['required']">
+
+                        Status is required
+
+                    </small>
+
+                </div>
+
+                <button type="submit" class="btn btn-success">
+
+                    Update Driver
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

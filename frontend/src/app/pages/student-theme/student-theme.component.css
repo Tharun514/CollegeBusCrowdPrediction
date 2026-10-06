@@ -1,0 +1,473 @@
+/*=========================================================
+  THEME SETTINGS
+=========================================================*/
+
+:host {
+    display: block;
+    width: 100%;
+}
+
+.theme-page {
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+/*=========================================================
+HEADER
+=========================================================*/
+
+.page-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-title h2 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.page-title p {
+    margin-top: 6px;
+    color: #64748b;
+    font-size: 15px;
+}
+
+.save-btn {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-width: 180px;
+    height: 48px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #0d9488;
+    color: #fff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .25s;
+}
+
+.save-btn:hover {
+    background: #0f766e;
+}
+
+/*=========================================================
+THEME GRID
+=========================================================*/
+
+.theme-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+    gap: 28px;
+
+}
+
+/*=========================================================
+CARD
+=========================================================*/
+
+.theme-card {
+
+    background: #fff;
+
+    border-radius: 22px;
+
+    padding: 24px;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
+
+    transition: .25s;
+
+    border: 2px solid transparent;
+
+}
+
+.theme-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+
+}
+
+.theme-card.active {
+
+    border-color: #0d9488;
+
+}
+
+/*=========================================================
+PREVIEW
+=========================================================*/
+
+.theme-preview {
+
+    height: 170px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    margin-bottom: 22px;
+
+    position: relative;
+
+}
+
+.preview-navbar {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    height: 26px;
+
+}
+
+.preview-sidebar {
+
+    position: absolute;
+
+    top: 26px;
+
+    left: 0;
+
+    width: 60px;
+
+    bottom: 0;
+
+}
+
+.preview-content {
+
+    position: absolute;
+
+    top: 26px;
+
+    left: 60px;
+
+    right: 0;
+
+    bottom: 0;
+
+}
+
+/*=========================================================
+LIGHT
+=========================================================*/
+
+.light-preview {
+
+    background: #f8fafc;
+
+}
+
+.light-preview .preview-navbar {
+
+    background: #ffffff;
+
+}
+
+.light-preview .preview-sidebar {
+
+    background: #e2e8f0;
+
+}
+
+.light-preview .preview-content {
+
+    background: #f1f5f9;
+
+}
+
+/*=========================================================
+DARK
+=========================================================*/
+
+.dark-preview {
+
+    background: #0f172a;
+
+}
+
+.dark-preview .preview-navbar {
+
+    background: #1e293b;
+
+}
+
+.dark-preview .preview-sidebar {
+
+    background: #334155;
+
+}
+
+.dark-preview .preview-content {
+
+    background: #0f172a;
+
+}
+
+/*=========================================================
+SYSTEM
+=========================================================*/
+
+.system-preview {
+
+    background: linear-gradient(to right, #ffffff 50%, #0f172a 50%);
+
+}
+
+.system-preview .preview-navbar {
+
+    background: #94a3b8;
+
+}
+
+.system-preview .preview-sidebar {
+
+    background: #cbd5e1;
+
+}
+
+.system-preview .preview-content {
+
+    background: transparent;
+
+}
+
+/*=========================================================
+TEXT
+=========================================================*/
+
+.theme-card h4 {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 0 0 12px;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    color: #0f172a;
+
+}
+
+.theme-card h4 i {
+
+    color: #0d9488;
+
+}
+
+.theme-card p {
+
+    color: #64748b;
+
+    line-height: 1.6;
+
+    min-height: 52px;
+
+}
+
+/*=========================================================
+BUTTONS
+=========================================================*/
+
+.select-btn,
+.outline-btn {
+
+    width: 100%;
+
+    height: 48px;
+
+    border-radius: 12px;
+
+    font-weight: 600;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+.select-btn {
+
+    border: none;
+
+    background: #0d9488;
+
+    color: #fff;
+
+}
+
+.select-btn:hover {
+
+    background: #0f766e;
+
+}
+
+.outline-btn {
+
+    background: #fff;
+
+    color: #0d9488;
+
+    border: 2px solid #0d9488;
+
+}
+
+.outline-btn:hover {
+
+    background: #0d9488;
+
+    color: #fff;
+
+}
+
+/*=========================================================
+RESPONSIVE
+=========================================================*/
+
+@media(max-width:768px) {
+
+    .page-title {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+
+    }
+
+    .save-btn {
+
+        width: 100%;
+
+    }
+
+    .theme-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    /*=========================================
+SUCCESS TOAST
+=========================================*/
+
+    .toast-notification {
+
+        position: fixed;
+
+        top: 95px;
+
+        right: 30px;
+
+        width: 340px;
+
+        background: #ffffff;
+
+        border-left: 5px solid #16a34a;
+
+        border-radius: 16px;
+
+        padding: 18px 20px;
+
+        display: flex;
+
+        align-items: flex-start;
+
+        gap: 14px;
+
+        box-shadow: 0 15px 45px rgba(0, 0, 0, .25);
+
+        z-index: 999999;
+
+        animation: toastSlide .35s ease;
+
+    }
+
+    .toast-notification i {
+
+        color: #16a34a;
+
+        font-size: 28px;
+
+        margin-top: 2px;
+
+    }
+
+    .toast-notification strong {
+
+        display: block;
+
+        font-size: 17px;
+
+        font-weight: 700;
+
+        color: #0f172a;
+
+        margin-bottom: 3px;
+
+    }
+
+    .toast-notification p {
+
+        margin: 0;
+
+        color: #64748b;
+
+        font-size: 14px;
+
+        line-height: 1.5;
+
+    }
+
+    @keyframes toastSlide {
+
+        from {
+
+            opacity: 0;
+
+            transform: translateX(80px);
+
+        }
+
+        to {
+
+            opacity: 1;
+
+            transform: translateX(0);
+
+        }
+
+    }
+
+}

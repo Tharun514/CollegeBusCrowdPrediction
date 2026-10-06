@@ -1,0 +1,267 @@
+/* ===========================
+   Background
+=========================== */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #edf4ff, #f7fbff, #ffffff);
+}
+
+.register-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px;
+
+}
+
+/* ===========================
+   Main Card
+=========================== */
+
+.register-card {
+
+    width: 100%;
+
+    max-width: 1050px;
+
+    background: rgba(255, 255, 255, .90);
+
+    backdrop-filter: blur(18px);
+
+    border-radius: 25px;
+
+    padding: 40px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .15);
+
+    animation: fadeIn .5s;
+
+}
+
+/* ===========================
+   Section Cards
+=========================== */
+
+.section-card {
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    border: 1px solid #ececec;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .06);
+
+    transition: .3s;
+
+}
+
+.section-card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .12);
+
+}
+
+.section-title {
+
+    color: #2354d8;
+
+    font-weight: 700;
+
+    margin-bottom: 25px;
+
+}
+
+/* ===========================
+   Inputs
+=========================== */
+
+.form-label {
+
+    font-weight: 600;
+
+    color: #374151;
+
+}
+
+.form-control {
+
+    height: 52px;
+
+    border-radius: 12px;
+
+    border: 1px solid #d7dce3;
+
+}
+
+.form-select {
+
+    height: 52px;
+
+    border-radius: 12px;
+
+}
+
+.form-control:focus,
+.form-select:focus {
+
+    box-shadow: 0 0 0 .18rem rgba(13, 110, 253, .18);
+
+    border-color: #4a8cff;
+
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.btn-primary {
+
+    height: 56px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: linear-gradient(90deg, #4f46e5, #0ea5e9);
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    transition: .3s;
+
+}
+
+.btn-primary:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 12px 30px rgba(14, 165, 233, .35);
+
+}
+
+/* ===========================
+   Password Strength
+=========================== */
+
+small {
+
+    font-weight: 600;
+
+}
+
+/* ===========================
+   Links
+=========================== */
+
+a {
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+}
+
+a:hover {
+
+    color: #0d6efd;
+
+}
+
+/* ===========================
+   Heading
+=========================== */
+
+h2 {
+
+    font-weight: 700;
+
+    color: #1e293b;
+
+}
+
+p {
+
+    color: #64748b;
+
+}
+
+/* ===========================
+   Animation
+=========================== */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media(max-width:768px) {
+
+    .register-page {
+
+        padding: 15px;
+
+    }
+
+    .register-card {
+
+        padding: 20px;
+
+    }
+
+    .section-card {
+
+        padding: 18px;
+
+    }
+
+    h2 {
+
+        font-size: 24px;
+
+    }
+
+    /* Hide browser password reveal icon */
+
+    input[type="password"]::-ms-reveal,
+    input[type="password"]::-ms-clear {
+        display: none;
+    }
+
+    input[type="password"]::-webkit-credentials-auto-fill-button {
+        display: none !important;
+    }
+
+}

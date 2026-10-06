@@ -1,0 +1,379 @@
+/* ===========================================================
+   STUDENT SETTINGS
+=========================================================== */
+
+:host {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* ===========================================================
+   PAGE
+=========================================================== */
+
+.settings-page {
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+/* ===========================================================
+   HEADER
+=========================================================== */
+
+.settings-header {
+
+    margin-bottom: 24px;
+
+    flex-shrink: 0;
+
+}
+
+.settings-header h1 {
+
+    margin: 0;
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+    color: #0f172a;
+
+}
+
+.settings-header p {
+
+    margin-top: 8px;
+
+    font-size: 16px;
+
+    color: #64748b;
+
+}
+
+/* ===========================================================
+   SETTINGS LAYOUT
+=========================================================== */
+
+.settings-layout {
+
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns: 320px 1fr;
+
+    gap: 28px;
+
+    min-height: 0;
+
+    overflow: hidden;
+
+    margin-top: -15px;
+}
+
+/* ===========================================================
+   LEFT SIDEBAR
+=========================================================== */
+
+.settings-sidebar {
+
+    position: sticky;
+
+    top: 0;
+
+    align-self: start;
+
+    background: #fff;
+
+    border-radius: 24px;
+
+    padding: 28px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .06);
+
+}
+
+.settings-sidebar h3 {
+
+    text-align: center;
+
+    margin: 0 0 20px;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: #0f172a;
+
+}
+
+/* ===========================================================
+   BUTTONS
+=========================================================== */
+
+.settings-sidebar button {
+
+    width: 100%;
+
+    height: 56px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: transparent;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 0 18px;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    color: #334155;
+
+    text-align: left;
+
+}
+
+.settings-sidebar button i {
+
+    font-size: 19px;
+
+}
+
+.settings-sidebar button:hover {
+
+    background: #eef6ff;
+
+    color: #2563eb;
+
+}
+
+.settings-sidebar button.active {
+
+    background: linear-gradient(135deg, #5b67f5, #3b82f6);
+
+    color: #fff;
+
+    box-shadow: 0 12px 28px rgba(59, 130, 246, .28);
+
+}
+
+/* ===========================================================
+   RIGHT CONTENT
+=========================================================== */
+
+.settings-content {
+
+    background: #fff;
+
+    border-radius: 24px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .06);
+
+    padding: 30px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+}
+
+.settings-content::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+.settings-content::-webkit-scrollbar-thumb {
+
+    background: #cbd5e1;
+
+    border-radius: 30px;
+
+}
+
+/* ===========================================================
+   COLLEGE IMAGE
+=========================================================== */
+
+.college-image {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    max-height: 500px;
+
+    object-fit: contain;
+
+    display: block;
+
+    border-radius: 18px;
+
+}
+
+/* ===========================================================
+   RESPONSIVE
+=========================================================== */
+
+@media(max-width:1100px) {
+
+    .settings-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .settings-sidebar {
+
+        position: relative;
+
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .settings-header h1 {
+
+        font-size: 28px;
+
+    }
+
+    .settings-header p {
+
+        font-size: 14px;
+
+    }
+
+    .settings-sidebar {
+
+        padding: 22px;
+
+    }
+
+    .settings-content {
+
+        padding: 22px;
+
+    }
+
+    /* ===========================
+   COLLEGE BANNER
+=========================== */
+
+    .college-banner {
+
+        width: 95%;
+
+        height: 350px;
+
+        margin: 20px 0 0 20px;
+
+        border-radius: 20px;
+
+        overflow: hidden;
+
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+
+    }
+
+    .college-banner img {
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position: center;
+
+    }
+
+    .banner-overlay {
+
+        position: absolute;
+
+        left: 0;
+
+        right: 0;
+
+        bottom: 0;
+
+        padding: 35px;
+
+        background: linear-gradient(to top,
+                rgba(0, 0, 0, .75),
+                rgba(0, 0, 0, .35),
+                transparent);
+
+        color: #fff;
+
+    }
+
+    .banner-overlay h2 {
+
+        margin: 0;
+
+        font-size: 34px;
+
+        font-weight: 700;
+
+    }
+
+    .banner-overlay p {
+
+        margin-top: 10px;
+
+        font-size: 18px;
+
+        opacity: .95;
+
+    }
+
+    @media(max-width:992px) {
+
+        .college-banner {
+
+            height: 300px;
+
+        }
+
+        .banner-overlay h2 {
+
+            font-size: 24px;
+
+        }
+
+        .banner-overlay p {
+
+            font-size: 15px;
+
+        }
+
+    }
+
+}

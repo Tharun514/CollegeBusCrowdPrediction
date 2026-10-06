@@ -1,0 +1,52 @@
+<div class="container-fluid py-4 animate-fade-in">
+
+    <div class="card shadow-sm detail-card">
+
+        <div class="card-header d-flex align-items-center gap-2">
+            <i class="bi bi-sign-turn-right-fill header-icon"></i>
+            <h4>My Route Details</h4>
+        </div>
+
+        <div class="card-body p-0">
+
+            <div class="detail-list">
+
+                <div class="detail-row">
+                    <div class="detail-label">
+                        <i class="bi bi-map"></i>
+                        <span>Route Name</span>
+                    </div>
+                    <div class="detail-value highlighted-value">{{route.routeName}}</div>
+                </div>
+
+                <div class="detail-row">
+                    <div class="detail-label">
+                        <i class="bi bi-geo-alt"></i>
+                        <span>Start Point</span>
+                    </div>
+                    <div class="detail-value">{{route.startLocation}}</div>
+                </div>
+
+                <div class="detail-row">
+                    <div class="detail-label">
+                        <i class="bi bi-geo-fill"></i>
+                        <span>End Point</span>
+                    </div>
+                    <div class="detail-value">{{route.endLocation}}</div>
+                </div>
+
+                <div class="detail-row">
+                    <div class="detail-label">
+                        <i class="bi bi-compass"></i>
+                        <span>Distance</span>
+                    </div>
+                    <div class="detail-value text-teal fw-bold">{{route.distanceKm}} KM</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,102 @@
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+
+            <h3 class="m-0">Edit Attendance</h3>
+            <button class="btn btn-secondary btn-sm" routerLink="/attendance">
+                <i class="bi bi-arrow-left"></i> Back to Attendance
+            </button>
+
+        </div>
+
+        <div class="card-body">
+
+            <form [formGroup]="attendanceForm" (ngSubmit)="updateAttendance()">
+
+                <!-- Student ID -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">Student ID</label>
+
+                    <input
+                        type="number"
+                        class="form-control"
+                        formControlName="studentId">
+
+                </div>
+
+                <!-- Bus ID -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">Bus ID</label>
+
+                    <input
+                        type="number"
+                        class="form-control"
+                        formControlName="busId">
+
+                </div>
+
+                <!-- Scan Time -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">Scan Time</label>
+
+                    <input
+                        type="datetime-local"
+                        class="form-control"
+                        formControlName="scanTime">
+
+                </div>
+
+                <!-- Scan Type -->
+
+                <div class="mb-3">
+
+                    <label class="form-label">Scan Type</label>
+
+                    <select
+                        class="form-select"
+                        formControlName="scanType">
+
+                        <option value="BOARDING">
+                            BOARDING
+                        </option>
+
+                        <option value="ALIGHTING">
+                            ALIGHTING
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary me-2">
+
+                    Update Attendance
+
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    routerLink="/attendance">
+
+                    Cancel
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

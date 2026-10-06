@@ -1,0 +1,69 @@
+<div class="app-layout" [class.admin-portal]="!isDarkTheme">
+
+    <!-- ===========================
+         TOP NAVBAR
+    ============================ -->
+
+    <header class="top-navbar">
+
+        <app-navbar></app-navbar>
+
+    </header>
+
+    <!-- ===========================
+         MAIN LAYOUT
+    ============================ -->
+
+    <div class="main-layout">
+
+        <!-- Mobile Overlay -->
+
+        <div class="sidebar-backdrop" [class.visible]="!isSidebarCollapsed" (click)="toggleSidebar()">
+
+        </div>
+
+        <!-- Sidebar -->
+
+        <aside class="left-sidebar" [class.collapsed]="isSidebarCollapsed">
+
+            <app-sidebar></app-sidebar>
+
+        </aside>
+
+        <!-- Content -->
+
+        <main class="content-area">
+
+            <!-- Loader -->
+
+            <div class="page-loader" *ngIf="loading">
+
+                <div class="loader"></div>
+
+                <p>Loading...</p>
+
+            </div>
+
+            <!-- Actual Page -->
+
+            <div class="page-content" *ngIf="!loading">
+
+                <!-- Only this section scrolls -->
+
+                <section class="page-body">
+
+                    <router-outlet></router-outlet>
+
+                </section>
+
+                <!-- Footer -->
+
+                <app-footer></app-footer>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>

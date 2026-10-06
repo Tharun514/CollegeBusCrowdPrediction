@@ -1,0 +1,177 @@
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+
+            <h4 class="m-0">Add Stop</h4>
+            <button class="btn btn-secondary btn-sm" routerLink="/stops">
+                <i class="bi bi-arrow-left"></i> Back to Stops
+            </button>
+
+        </div>
+
+        <div class="card-body">
+
+            <form [formGroup]="stopForm" (ngSubmit)="saveStop()">
+
+                <div class="row">
+
+                    <!-- Route -->
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+                            Route
+                        </label>
+
+                        <select class="form-select" formControlName="routeId">
+
+                            <option value="">
+                                Select Route
+                            </option>
+
+                            <option *ngFor="let route of routes" [value]="route.routeId">
+
+                                {{route.routeName}}
+
+                            </option>
+
+                        </select>
+
+                        <small class="text-danger"
+                            *ngIf="stopForm.get('routeId')?.touched && stopForm.get('routeId')?.invalid">
+
+                            Route is required
+
+                        </small>
+
+                    </div>
+
+                    <!-- Stop Name -->
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+
+                            Stop Name
+
+                        </label>
+
+                        <input type="text" class="form-control" formControlName="stopName">
+
+                        <small class="text-danger"
+                            *ngIf="stopForm.get('stopName')?.touched && stopForm.get('stopName')?.invalid">
+
+                            Stop Name is required
+
+                        </small>
+
+                    </div>
+
+                    <!-- Latitude -->
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+
+                            Latitude
+
+                        </label>
+
+                        <input type="number" step="0.000001" class="form-control" formControlName="latitude">
+
+                        <small class="text-danger"
+                            *ngIf="stopForm.get('latitude')?.touched && stopForm.get('latitude')?.invalid">
+
+                            Latitude is required
+
+                        </small>
+
+                    </div>
+
+                    <!-- Longitude -->
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+
+                            Longitude
+
+                        </label>
+
+                        <input type="number" step="0.000001" class="form-control" formControlName="longitude">
+
+                        <small class="text-danger"
+                            *ngIf="stopForm.get('longitude')?.touched && stopForm.get('longitude')?.invalid">
+
+                            Longitude is required
+
+                        </small>
+
+                    </div>
+
+                    <!-- Sequence -->
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+
+                            Sequence
+
+                        </label>
+
+                        <input type="number" class="form-control" formControlName="sequence">
+
+                        <small class="text-danger"
+                            *ngIf="stopForm.get('sequence')?.touched && stopForm.get('sequence')?.invalid">
+
+                            Sequence is required
+
+                        </small>
+
+                    </div>
+
+                    <!-- Major Stop -->
+
+                    <div class="col-md-6 mb-3 d-flex align-items-center">
+
+                        <div class="form-check mt-4">
+
+                            <input type="checkbox" class="form-check-input" formControlName="isMajorStop">
+
+                            <label class="form-check-label">
+
+                                Major Stop
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="text-end">
+
+                    <button type="submit" class="btn btn-success me-2">
+
+                        Save
+
+                    </button>
+
+                    <button type="button" class="btn btn-secondary" routerLink="/stops">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

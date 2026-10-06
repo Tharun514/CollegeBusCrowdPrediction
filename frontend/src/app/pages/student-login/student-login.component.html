@@ -1,0 +1,118 @@
+<form autocomplete="off">
+
+    <div class="login-page">
+
+        <div class="login-card">
+
+            <div class="icon-box student">
+
+                <i class="bi bi-mortarboard-fill"></i>
+
+            </div>
+
+            <h1>Student Login</h1>
+
+            <p>
+                Enter your student credentials to track your bus
+            </p>
+
+            <div class="mb-4">
+
+                <label class="form-label">
+                    Student Email
+                </label>
+
+                <div class="input-group">
+
+                    <span class="input-group-text">
+                        <i class="bi bi-envelope-fill"></i>
+                    </span>
+
+                    <input class="form-control" type="email" placeholder="Enter Email Address" [(ngModel)]="email"
+                        name="studentEmail" autocomplete="new-email" autocorrect="off" autocapitalize="off"
+                        spellcheck="false">
+
+                </div>
+
+            </div>
+
+            <div class="mb-4">
+
+                <label class="form-label">
+                    Password
+                </label>
+
+                <div class="input-group">
+
+                    <span class="input-group-text">
+                        <i class="bi bi-lock-fill"></i>
+                    </span>
+
+                    <input class="form-control" type="password" placeholder="Enter Password" [(ngModel)]="password"
+                        name="studentPassword" autocomplete="new-password">
+
+                </div>
+
+            </div>
+
+            <button type="button" class="btn student-btn w-100" (click)="login()">
+
+                <i class="bi bi-box-arrow-in-right me-2"></i>
+
+                Sign In
+
+            </button>
+
+            <div class="text-center mt-4">
+
+                <a routerLink="/register">
+
+                    <i class="bi bi-person-plus-fill"></i>
+
+                    Create Student Account
+
+                </a>
+
+            </div>
+
+            <div class="text-center mt-4">
+
+                <a routerLink="/forgot-password">
+
+                    <i class="bi bi-key-fill"></i>
+
+                    Forgot Password?
+
+                </a>
+
+            </div>
+
+            <div class="text-center mt-4">
+
+                <hr>
+
+                <span class="text-muted">
+
+                    Administrator?
+
+                    <a routerLink="/">
+
+                        Access Admin Panel
+
+                    </a>
+
+                </span>
+
+            </div>
+
+            <div class="alert alert-danger mt-3 text-center" *ngIf="message">
+
+                {{message}}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</form>

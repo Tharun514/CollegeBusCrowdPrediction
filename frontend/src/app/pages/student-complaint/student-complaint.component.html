@@ -1,0 +1,82 @@
+<div class="container mt-4">
+
+    <div class="card mb-4 shadow">
+
+        <div class="card-header bg-danger text-white">
+
+            <h4>Raise Complaint</h4>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="mb-3">
+
+                <label>Title</label>
+
+                <input class="form-control" [(ngModel)]="complaint.title">
+
+            </div>
+
+            <div class="mb-3">
+
+                <label>Description</label>
+
+                <textarea rows="4" class="form-control" [(ngModel)]="complaint.description">
+</textarea>
+
+            </div>
+
+            <button class="btn btn-danger" (click)="saveComplaint()">
+                Submit
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+
+            <h4>My Complaints</h4>
+
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-bordered">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Date</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr *ngFor="let c of complaints">
+
+                        <td>{{c.title}}</td>
+                        <td>{{c.description}}</td>
+                        <td>{{c.status}}</td>
+                        <td>{{c.createdAt | date:'dd-MM-yyyy hh:mm a'}}</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

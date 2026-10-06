@@ -1,0 +1,73 @@
+<div class="container-fluid py-4 animate-fade-in">
+
+    <div class="card shadow-sm detail-card">
+
+        <div class="card-header d-flex align-items-center gap-2">
+            <i class="bi bi-bus-front-fill header-icon"></i>
+            <h4>My Bus Details</h4>
+        </div>
+
+        <div class="card-body p-0">
+
+            <div class="detail-list">
+
+                <div class="detail-row">
+                    <div class="detail-label">
+                        <i class="bi bi-bus-front"></i>
+                        <span>Bus Number</span>
+                    </div>
+                    <div class="detail-value highlighted-value">{{bus.busNo}}</div>
+                </div>
+
+                <div class="detail-row">
+                    <div class="detail-label">
+                        <i class="bi bi-card-text"></i>
+                        <span>Registration Number</span>
+                    </div>
+                    <div class="detail-value">{{bus.registrationNumber}}</div>
+                </div>
+
+                <div class="detail-row">
+                    <div class="detail-label">
+                        <i class="bi bi-people"></i>
+                        <span>Capacity</span>
+                    </div>
+                    <div class="detail-value">{{bus.capacity}} Seats</div>
+                </div>
+
+                <div class="detail-row">
+                    <div class="detail-label">
+                        <i class="bi bi-toggle-on"></i>
+                        <span>Status</span>
+                    </div>
+                    <div class="detail-value">
+                        <span class="status-badge" [ngClass]="{
+                            'status-active': bus.status === 'Active' || bus.status === 'Running',
+                            'status-inactive': bus.status !== 'Active' && bus.status !== 'Running'
+                        }">{{bus.status}}</span>
+                    </div>
+                </div>
+
+                <div class="detail-row">
+                    <div class="detail-label">
+                        <i class="bi bi-geo-alt-fill text-danger"></i>
+                        <span>Current Stop</span>
+                    </div>
+                    <div class="detail-value">{{bus.currentStop || 'Not Available'}}</div>
+                </div>
+
+                <div class="detail-row">
+                    <div class="detail-label">
+                        <i class="bi bi-chevron-double-right text-success"></i>
+                        <span>Next Stop</span>
+                    </div>
+                    <div class="detail-value text-success fw-bold">{{bus.nextStop || 'Not Available'}}</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
