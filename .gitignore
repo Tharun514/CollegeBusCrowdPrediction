@@ -1,0 +1,25 @@
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*credentials*
+*secret*
+
+# Java / Maven
+backend/target/
+*.class
+
+# Angular / Node
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+
+# Logs and backups
+*.log
+*.backup
+*.bak
+*.swp
+src.backup/
+frontend/src.backup/
+frontend/src.backup-*/

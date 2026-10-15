@@ -9,7 +9,7 @@ import { StudentBusAssignment } from '../models/student-bus-assignment';
 })
 export class StudentBusAssignmentService {
 
-    private baseUrl = "http://college-bus-crowd-prediction-env.eba-dp7mjwij.ap-south-1.elasticbeanstalk.com/studentbusassignment";
+    private baseUrl = "http://15.206.57.102:8085/studentbusassignment";
 
     constructor(private http: HttpClient) { }
 

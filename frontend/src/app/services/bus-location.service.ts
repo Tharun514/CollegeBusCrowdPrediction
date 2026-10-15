@@ -8,7 +8,7 @@ import { BusLocation } from 'src/app/models/bus-location';
 })
 export class BusLocationService {
 
-    private apiUrl = 'http://college-bus-crowd-prediction-env.eba-dp7mjwij.ap-south-1.elasticbeanstalk.com/buslocation';
+    private apiUrl = 'http://15.206.57.102:8085/buslocation';
 
     constructor(private http: HttpClient) { }
 

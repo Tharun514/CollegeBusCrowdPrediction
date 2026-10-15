@@ -82,7 +82,7 @@ export class StudentProfileComponent implements OnInit {
         if (data.photoUrl) {
 
           this.imagePreview =
-            "http://college-bus-crowd-prediction-env.eba-dp7mjwij.ap-south-1.elasticbeanstalk.com/uploads/" + data.photoUrl;
+            "http://15.206.57.102:8085/uploads/" + data.photoUrl;
 
         }
 
@@ -167,7 +167,7 @@ export class StudentProfileComponent implements OnInit {
             next: (fileName) => {
 
               this.imagePreview =
-                "http://college-bus-crowd-prediction-env.eba-dp7mjwij.ap-south-1.elasticbeanstalk.com/uploads/" + fileName;
+                "http://15.206.57.102:8085/uploads/" + fileName;
 
             }
 

@@ -11,7 +11,7 @@ import com.example.demo.service.AttendanceService;
 
 @RestController
 @RequestMapping("/attendance")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "http://15.206.57.102"})
 public class AttendanceController {
 
     @Autowired

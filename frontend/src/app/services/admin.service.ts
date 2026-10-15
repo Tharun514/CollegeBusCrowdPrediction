@@ -13,7 +13,7 @@ import { ResetPassword } from '../models/reset-password';
 })
 export class AdminService {
 
-  private baseUrl = 'http://college-bus-crowd-prediction-env.eba-dp7mjwij.ap-south-1.elasticbeanstalk.com/admin';
+  private baseUrl = 'http://15.206.57.102:8085/admin';
 
   constructor(private http: HttpClient) { }
 

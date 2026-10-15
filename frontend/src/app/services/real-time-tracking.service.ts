@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class RealTimeTrackingService {
 
-    private apiUrl = 'http://college-bus-crowd-prediction-env.eba-dp7mjwij.ap-south-1.elasticbeanstalk.com/realtimetracking';
+    private apiUrl = 'http://15.206.57.102:8085/realtimetracking';
 
     constructor(private http: HttpClient) { }
 

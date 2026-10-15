@@ -8,7 +8,7 @@ import { Complaint } from '../models/complaint';
 })
 export class ComplaintService {
 
-    private baseUrl = 'http://college-bus-crowd-prediction-env.eba-dp7mjwij.ap-south-1.elasticbeanstalk.com/complaint';
+    private baseUrl = 'http://15.206.57.102:8085/complaint';
 
     constructor(private http: HttpClient) { }
 

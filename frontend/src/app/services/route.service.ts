@@ -9,7 +9,7 @@ import { Route } from '../models/route';
 })
 export class RouteService {
 
-    private baseUrl = 'http://college-bus-crowd-prediction-env.eba-dp7mjwij.ap-south-1.elasticbeanstalk.com/route';
+    private baseUrl = 'http://15.206.57.102:8085/route';
 
     constructor(private http: HttpClient) { }
 

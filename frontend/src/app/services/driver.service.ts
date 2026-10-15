@@ -8,7 +8,7 @@ import { Driver } from '../models/driver';
 })
 export class DriverService {
 
-  private baseUrl = 'http://college-bus-crowd-prediction-env.eba-dp7mjwij.ap-south-1.elasticbeanstalk.com/driver';
+  private baseUrl = 'http://15.206.57.102:8085/driver';
 
   constructor(private http: HttpClient) { }
 

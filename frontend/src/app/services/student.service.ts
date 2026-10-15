@@ -14,7 +14,7 @@ import { ChangePassword } from '../models/change-password';
 })
 export class StudentService {
 
-  private baseUrl = "http://college-bus-crowd-prediction-env.eba-dp7mjwij.ap-south-1.elasticbeanstalk.com/student";
+  private baseUrl = "http://15.206.57.102:8085/student";
 
   constructor(private http: HttpClient) { }
 

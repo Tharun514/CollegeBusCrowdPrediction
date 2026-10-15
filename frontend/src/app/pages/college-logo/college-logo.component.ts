@@ -28,7 +28,7 @@ export class CollegeLogoComponent implements OnInit {
 
   loadLogo(): void {
 
-    this.http.get<any>('http://college-bus-crowd-prediction-env.eba-dp7mjwij.ap-south-1.elasticbeanstalk.com/settings/get')
+    this.http.get<any>('http://15.206.57.102:8085/settings/get')
 
       .subscribe({
 
@@ -37,7 +37,7 @@ export class CollegeLogoComponent implements OnInit {
           if (res.logoUrl) {
 
             this.logoPreview =
-              'http://college-bus-crowd-prediction-env.eba-dp7mjwij.ap-south-1.elasticbeanstalk.com' +
+              'http://15.206.57.102:8085' +
               res.logoUrl +
               '?t=' +
               new Date().getTime();
@@ -94,7 +94,7 @@ export class CollegeLogoComponent implements OnInit {
     formData.append('file', this.selectedFile);
 
     this.http.post<any>(
-      'http://college-bus-crowd-prediction-env.eba-dp7mjwij.ap-south-1.elasticbeanstalk.com/settings/upload-logo',
+      'http://15.206.57.102:8085/settings/upload-logo',
       formData
     )
 
@@ -103,7 +103,7 @@ export class CollegeLogoComponent implements OnInit {
         next: (res) => {
 
           this.logoPreview =
-            'http://college-bus-crowd-prediction-env.eba-dp7mjwij.ap-south-1.elasticbeanstalk.com' +
+            'http://15.206.57.102:8085' +
             res.logoUrl +
             '?t=' +
             new Date().getTime();

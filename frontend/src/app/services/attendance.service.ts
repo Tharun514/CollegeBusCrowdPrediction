@@ -9,7 +9,7 @@ import { Attendance } from '../models/attendance';
 })
 export class AttendanceService {
 
-  private baseUrl = 'http://college-bus-crowd-prediction-env.eba-dp7mjwij.ap-south-1.elasticbeanstalk.com/attendance';
+  private baseUrl = 'http://15.206.57.102:8085/attendance';
 
   constructor(private http: HttpClient) { }
 

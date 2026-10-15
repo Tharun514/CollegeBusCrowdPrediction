@@ -9,7 +9,7 @@ import { Dashboard } from '../models/dashboard';
 })
 export class DashboardService {
 
-    private apiUrl = 'http://college-bus-crowd-prediction-env.eba-dp7mjwij.ap-south-1.elasticbeanstalk.com/dashboard';
+    private apiUrl = 'http://15.206.57.102:8085/dashboard';
 
     constructor(private http: HttpClient) { }
 

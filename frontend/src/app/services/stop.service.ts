@@ -8,7 +8,7 @@ import { Stop } from '../models/stop';
 })
 export class StopService {
 
-  private baseUrl = 'http://college-bus-crowd-prediction-env.eba-dp7mjwij.ap-south-1.elasticbeanstalk.com/stops';
+  private baseUrl = 'http://15.206.57.102:8085/stops';
 
   constructor(private http: HttpClient) { }
 

@@ -24,7 +24,7 @@ export interface Settings {
 })
 export class SettingsService {
 
-    private apiUrl = 'http://college-bus-crowd-prediction-env.eba-dp7mjwij.ap-south-1.elasticbeanstalk.com/settings';
+    private apiUrl = 'http://15.206.57.102:8085/settings';
 
     private themeSubject = new BehaviorSubject<string>('light');
 
